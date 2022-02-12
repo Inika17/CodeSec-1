@@ -10,8 +10,8 @@ uses
 type
   TFrmPoints = class(TWebForm)
     WebLabel1: TWebLabel;
-    WebButton1: TWebButton;
-    procedure WebButton1Click(Sender: TObject);
+    HomePage: TWebButton;
+    procedure HomePageClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -23,11 +23,13 @@ var
 
 implementation
 
+Uses HomePage_U;
+
 {$R *.dfm}
 
-procedure TFrmPoints.WebButton1Click(Sender: TObject);
+procedure TFrmPoints.HomePageClick(Sender: TObject);
 begin
-  frmPoints.Free;
+  Close;
 end;
 
 end.

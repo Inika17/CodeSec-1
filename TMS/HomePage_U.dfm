@@ -1,7 +1,6 @@
 object FrmHome: TFrmHome
   Width = 551
   Height = 548
-  ElementClassName = 'transparent'
   OnCreate = WebFormCreate
   object WebLabel1: TWebLabel
     Left = 32
@@ -63,7 +62,6 @@ object FrmHome: TFrmHome
     Width = 51
     Height = 13
     Caption = 'Relaxation'
-    ElementClassName = 'h3'
     HeightPercent = 100.000000000000000000
     WidthPercent = 100.000000000000000000
   end
@@ -92,30 +90,6 @@ object FrmHome: TFrmHome
     WidthPercent = 100.000000000000000000
     OnClick = WeightLossBtnClick
   end
-  object StrengthBtn: TWebButton
-    Left = 283
-    Top = 70
-    Width = 150
-    Height = 150
-    Caption = 'Strength and Endruance'
-    ChildOrder = 2
-    ElementClassName = 'transparent'
-    HeightPercent = 100.000000000000000000
-    WidthPercent = 100.000000000000000000
-    OnClick = WeightLossBtnClick
-  end
-  object RelaxationBtn: TWebButton
-    Left = 176
-    Top = 298
-    Width = 150
-    Height = 150
-    Caption = 'Relaxation'
-    ChildOrder = 2
-    ElementClassName = 'transparent'
-    HeightPercent = 100.000000000000000000
-    WidthPercent = 100.000000000000000000
-    OnClick = WeightLossBtnClick
-  end
   object TrackingBtn: TWebButton
     Left = 176
     Top = 496
@@ -126,5 +100,29 @@ object FrmHome: TFrmHome
     HeightPercent = 100.000000000000000000
     WidthPercent = 100.000000000000000000
     OnClick = TrackingBtnClick
+  end
+  object StrengthBtn: TWebButton
+    Left = 283
+    Top = 70
+    Width = 150
+    Height = 150
+    Caption = 'Strength and Endurance'
+    ChildOrder = 15
+    ElementClassName = 'transparent'
+    HeightPercent = 100.000000000000000000
+    WidthPercent = 100.000000000000000000
+    OnClick = StrengthBtnClick
+  end
+  object RelaxationBtn: TWebButton
+    Left = 176
+    Top = 298
+    Width = 150
+    Height = 150
+    Caption = 'Relaxation'
+    ChildOrder = 15
+    ElementClassName = 'transparent'
+    HeightPercent = 100.000000000000000000
+    WidthPercent = 100.000000000000000000
+    OnClick = RelaxationBtnClick
   end
 end

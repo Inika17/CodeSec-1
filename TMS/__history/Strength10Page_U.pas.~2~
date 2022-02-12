@@ -1,0 +1,29 @@
+unit Strength10Page_U;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, JS, Web, WEBLib.Graphics, WEBLib.Controls,
+  WEBLib.Forms, WEBLib.Dialogs, Vcl.StdCtrls, WEBLib.StdCtrls, Vcl.Controls,
+  WEBLib.WebCtrls;
+ // PointsPage_U, WeightLossPage_U,HomePage_U, RelaxationPage_U, TimePage_U;
+
+type
+  TFrmStrength10 = class(TWebForm)
+    WeightLossVid: TWebYoutube;
+    BackBtn: TWebButton;
+    CompleteBtn: TWebButton;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmStrength10: TFrmStrength10;
+
+implementation
+
+{$R *.dfm}
+
+end.

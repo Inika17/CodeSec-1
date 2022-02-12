@@ -9,11 +9,13 @@ uses
   //PointsPage_U, ,StrengthPage_U, RelaxationPage_U, TimePage_U,
 
 type
-  TFrmWeightLoss = class(TWebForm)
-    WeightLossVid: TWebYoutube;
+  TFrmWeightLoss10 = class(TWebForm)
+    WeightLoss10Vid: TWebYoutube;
     BackBtn: TWebButton;
+    CompleteBtn: TWebButton;
     procedure WebFormCreate(Sender: TObject);
     procedure BackBtnClick(Sender: TObject);
+    procedure CompleteBtnClick(Sender: TObject);
   private
     { Private declarations }
     Time : integer;
@@ -22,24 +24,30 @@ type
   end;
 
 var
-  FrmWeightLoss: TFrmWeightLoss;
+  FrmWeightLoss10: TFrmWeightLoss10;
 
 implementation
 
-Uses HomePage_U, TimePage_U;
+Uses HomePage_U, WeightLossTimePage_U;
 
 {$R *.dfm}
 
 
-procedure TFrmWeightLoss.BackBtnClick(Sender: TObject);
-Var newform : TFrmHome;
+procedure TFrmWeightLoss10.BackBtnClick(Sender: TObject);
 begin
   Close;
 end;
 
-procedure TFrmWeightLoss.WebFormCreate(Sender: TObject);
+procedure TFrmWeightLoss10.CompleteBtnClick(Sender: TObject);
+Var newform : TFrmHome;
 begin
-  WeightLossVid.VideoID := 'fUJjsUn9bCo';
+  Close;
+  newform := TFrmHome.CreateNew;
+end;
+
+procedure TFrmWeightLoss10.WebFormCreate(Sender: TObject);
+begin
+  WeightLoss10Vid.VideoID := 'fUJjsUn9bCo';
 end;
 
 end.

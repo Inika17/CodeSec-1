@@ -1,8 +1,8 @@
-object FrmWeightLoss: TFrmWeightLoss
+object FrmWeightLoss10: TFrmWeightLoss10
   Width = 640
   Height = 480
   OnCreate = WebFormCreate
-  object WeightLossVid: TWebYoutube
+  object WeightLoss10Vid: TWebYoutube
     Left = 80
     Top = 16
     Width = 480
@@ -22,5 +22,16 @@ object FrmWeightLoss: TFrmWeightLoss
     HeightPercent = 100.000000000000000000
     WidthPercent = 100.000000000000000000
     OnClick = BackBtnClick
+  end
+  object CompleteBtn: TWebButton
+    Left = 272
+    Top = 408
+    Width = 96
+    Height = 25
+    Caption = 'Complete'
+    ChildOrder = 2
+    HeightPercent = 100.000000000000000000
+    WidthPercent = 100.000000000000000000
+    OnClick = CompleteBtnClick
   end
 end

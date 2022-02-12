@@ -10,15 +10,15 @@ object FrmPoints: TFrmPoints
     HeightPercent = 100.000000000000000000
     WidthPercent = 100.000000000000000000
   end
-  object WebButton1: TWebButton
-    Left = 512
-    Top = 35
-    Width = 96
+  object HomePage: TWebButton
+    Left = 8
+    Top = 8
+    Width = 57
     Height = 25
-    Caption = 'WebButton1'
-    ChildOrder = 1
+    Caption = '< Home'
+    ChildOrder = 4
     HeightPercent = 100.000000000000000000
     WidthPercent = 100.000000000000000000
-    OnClick = WebButton1Click
+    OnClick = HomePageClick
   end
 end

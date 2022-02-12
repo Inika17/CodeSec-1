@@ -18,8 +18,11 @@ uses
   WEBLib.ExtCtrls,
   PointsPage_U,
   WeightLoss10Page_U,
-  StrengthPage_U,
-  RelaxationPage_U,
+  Strength10Page_U,
+  Relaxation10Page_U,
+  WeightLossTimePage_U,
+  StrengthTimePage_U,
+  RelaxationTimePage_U,
   TimePage_U,
   TrackingPage_U;
 
@@ -30,13 +33,13 @@ type
     WeightLossBtn: TWebButton;
     WeightLossImg: TWebImageControl;
     StrengthImg: TWebImageControl;
-    StrengthBtn: TWebButton;
     RelaxationImg: TWebImageControl;
-    RelaxationBtn: TWebButton;
     WeightLossLbl: TWebLabel;
     StrengthLbl: TWebLabel;
     RelaxationLbl: TWebLabel;
     TrackingBtn: TWebButton;
+    StrengthBtn: TWebButton;
+    RelaxationBtn: TWebButton;
     procedure WebFormCreate(Sender: TObject);
     procedure WeightLossBtnClick(Sender: TObject);
     procedure PointsBtnClick(Sender: TObject);
@@ -66,8 +69,8 @@ end;
 procedure TFrmHome.WebFormCreate(Sender: TObject);
 begin
   WeightLossImg.URL := 'https://us.123rf.com/450wm/goodstocker/goodstocker1810/goodstocker181000031/110034799-feet-on-weighing-scales-cartoon-design-icon-colorful-flat-vector-illustration-isolated-on-white-back.jpg?ver=6';
-  StrengthImg.URL := '';
-  RelaxationImg.URL := '';
+  StrengthImg.URL := 'https://media.istockphoto.com/vectors/cute-funny-heart-organ-jogging-run-vector-flat-line-cartoon-kawaii-vector-id1336073540';
+  RelaxationImg.URL := 'https://vegan.org/wp-content/uploads/2019/10/Meditation-Stock.jpg';
 end;
 
 procedure TFrmHome.PointsBtnClick(Sender: TObject);
@@ -93,7 +96,7 @@ end;
 procedure TFrmHome.RelaxationBtnClick(Sender: TObject);
 var newform : TFrmTimer;
 begin
-    ExerciseChoice := 3;
+  ExerciseChoice := 3;
   newform := TFrmTimer.CreateNew;
 end;
 end.

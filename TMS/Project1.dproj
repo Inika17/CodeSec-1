@@ -115,27 +115,57 @@
             <DesignClass>TWebForm</DesignClass>
         </DCCReference>
         <DCCReference Include="WeightLoss10Page_U.pas">
-            <Form>FrmWeightLoss</Form>
+            <Form>FrmWeightLoss10</Form>
             <FormType>dfm</FormType>
             <DesignClass>TWebForm</DesignClass>
         </DCCReference>
-        <DCCReference Include="StrengthPage_U.pas">
-            <Form>FrmStrength</Form>
+        <DCCReference Include="Strength10Page_U.pas">
+            <Form>FrmStrength10</Form>
             <FormType>dfm</FormType>
             <DesignClass>TWebForm</DesignClass>
         </DCCReference>
-        <DCCReference Include="RelaxationPage_U.pas">
-            <Form>FrmRelaxation</Form>
-            <FormType>dfm</FormType>
-            <DesignClass>TWebForm</DesignClass>
-        </DCCReference>
-        <DCCReference Include="TimePage_U.pas">
-            <Form>FrmTimer</Form>
+        <DCCReference Include="Relaxation10Page_U.pas">
+            <Form>FrmRelaxation10</Form>
             <FormType>dfm</FormType>
             <DesignClass>TWebForm</DesignClass>
         </DCCReference>
         <DCCReference Include="TrackingPage_U.pas">
             <Form>FrmTracking</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TWebForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="WeightLoss15Page_U.pas">
+            <Form>FrmWeightLoss15</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TWebForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="WeightLoss20Page_U.pas">
+            <Form>FrmWeightLoss20</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TWebForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Strength15Page_U.pas">
+            <Form>FrmStrength15</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TWebForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Strength20Page_U.pas">
+            <Form>FrmStrength20</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TWebForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Relaxation20Page_U.pas">
+            <Form>FrmRelaxation20</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TWebForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Relaxation15Page_U.pas">
+            <Form>FrmRelaxation15</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TWebForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="TimePage_U.pas">
+            <Form>FrmTimer</Form>
             <FormType>dfm</FormType>
             <DesignClass>TWebForm</DesignClass>
         </DCCReference>

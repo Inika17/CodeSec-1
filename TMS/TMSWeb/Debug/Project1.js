@@ -49245,22 +49245,22 @@ rtl.module("PointsPage_U",["System","SysUtils","Classes","JS","Web","WEBLib.Grap
     this.$init = function () {
       pas["WEBLib.Forms"].TForm.$init.call(this);
       this.WebLabel1 = null;
-      this.WebButton1 = null;
+      this.HomePage = null;
     };
     this.$final = function () {
       this.WebLabel1 = undefined;
-      this.WebButton1 = undefined;
+      this.HomePage = undefined;
       pas["WEBLib.Forms"].TForm.$final.call(this);
     };
-    this.WebButton1Click = function (Sender) {
-      rtl.free($mod,"FrmPoints");
+    this.HomePageClick = function (Sender) {
+      this.Close();
     };
     this.LoadDFMValues = function () {
       pas["WEBLib.Forms"].TCustomForm.LoadDFMValues.call(this);
       this.WebLabel1 = pas["WEBLib.StdCtrls"].TLabel.$create("Create$1",[this]);
-      this.WebButton1 = pas["WEBLib.StdCtrls"].TButton.$create("Create$1",[this]);
+      this.HomePage = pas["WEBLib.StdCtrls"].TButton.$create("Create$1",[this]);
       this.WebLabel1.BeforeLoadDFMValues();
-      this.WebButton1.BeforeLoadDFMValues();
+      this.HomePage.BeforeLoadDFMValues();
       try {
         this.SetName("FrmPoints");
         this.SetWidth(640);
@@ -49274,183 +49274,6 @@ rtl.module("PointsPage_U",["System","SysUtils","Classes","JS","Web","WEBLib.Grap
         this.WebLabel1.SetCaption("Points!");
         this.WebLabel1.SetHeightPercent(100.000000000000000000);
         this.WebLabel1.SetWidthPercent(100.000000000000000000);
-        this.WebButton1.SetParentComponent(this);
-        this.WebButton1.SetName("WebButton1");
-        this.WebButton1.SetLeft(512);
-        this.WebButton1.SetTop(35);
-        this.WebButton1.SetWidth(96);
-        this.WebButton1.SetHeight(25);
-        this.WebButton1.SetCaption("WebButton1");
-        this.WebButton1.SetChildOrderEx(1);
-        this.WebButton1.SetHeightPercent(100.000000000000000000);
-        this.WebButton1.SetWidthPercent(100.000000000000000000);
-        this.SetEvent$1(this.WebButton1,this,"OnClick","WebButton1Click");
-      } finally {
-        this.WebLabel1.AfterLoadDFMValues();
-        this.WebButton1.AfterLoadDFMValues();
-      };
-    };
-    rtl.addIntf(this,pas.System.IUnknown);
-    var $r = this.$rtti;
-    $r.addField("WebLabel1",pas["WEBLib.StdCtrls"].$rtti["TLabel"]);
-    $r.addField("WebButton1",pas["WEBLib.StdCtrls"].$rtti["TButton"]);
-    $r.addMethod("WebButton1Click",0,[["Sender",pas.System.$rtti["TObject"]]]);
-  });
-  this.FrmPoints = null;
-});
-rtl.module("StrengthPage_U",["System","SysUtils","Classes","JS","Web","WEBLib.Graphics","WEBLib.Controls","WEBLib.Forms","WEBLib.Dialogs"],function () {
-  "use strict";
-  var $mod = this;
-  rtl.createClass(this,"TFrmStrength",pas["WEBLib.Forms"].TForm,function () {
-    this.LoadDFMValues = function () {
-      pas["WEBLib.Forms"].TCustomForm.LoadDFMValues.call(this);
-      try {
-        this.SetName("FrmStrength");
-        this.SetWidth(640);
-        this.SetHeight(480);
-      } finally {
-      };
-    };
-    rtl.addIntf(this,pas.System.IUnknown);
-  });
-  this.FrmStrength = null;
-});
-rtl.module("RelaxationPage_U",["System","SysUtils","Classes","JS","Web","WEBLib.Graphics","WEBLib.Controls","WEBLib.Forms","WEBLib.Dialogs"],function () {
-  "use strict";
-  var $mod = this;
-  rtl.createClass(this,"TFrmRelaxation",pas["WEBLib.Forms"].TForm,function () {
-    this.LoadDFMValues = function () {
-      pas["WEBLib.Forms"].TCustomForm.LoadDFMValues.call(this);
-      try {
-        this.SetName("FrmRelaxation");
-        this.SetWidth(640);
-        this.SetHeight(480);
-      } finally {
-      };
-    };
-    rtl.addIntf(this,pas.System.IUnknown);
-  });
-  this.FrmRelaxation = null;
-});
-rtl.module("TimePage_U",["System","SysUtils","Classes","JS","Web","WEBLib.Graphics","WEBLib.Controls","WEBLib.Forms","WEBLib.Dialogs","WEBLib.Controls","WEBLib.StdCtrls","WEBLib.StdCtrls","PointsPage_U","WeightLoss10Page_U","StrengthPage_U","RelaxationPage_U"],function () {
-  "use strict";
-  var $mod = this;
-  rtl.createClass(this,"TFrmTimer",pas["WEBLib.Forms"].TForm,function () {
-    this.$init = function () {
-      pas["WEBLib.Forms"].TForm.$init.call(this);
-      this.TimeLbl = null;
-      this.Time10Btn = null;
-      this.Time15Btn = null;
-      this.Time20Btn = null;
-      this.HomePage = null;
-      this.timechosen = 0;
-    };
-    this.$final = function () {
-      this.TimeLbl = undefined;
-      this.Time10Btn = undefined;
-      this.Time15Btn = undefined;
-      this.Time20Btn = undefined;
-      this.HomePage = undefined;
-      pas["WEBLib.Forms"].TForm.$final.call(this);
-    };
-    this.Time10BtnClick = function (Sender) {
-      var newform1 = null;
-      var newform2 = null;
-      var newform3 = null;
-      this.timechosen = 10;
-      var $tmp = pas.HomePage_U.FrmHome.ExerciseChoice;
-      if ($tmp === 1) {
-        newform1 = pas.WeightLoss10Page_U.TFrmWeightLoss.$create("CreateNew$2")}
-       else if ($tmp === 2) {
-        newform2 = pas.StrengthPage_U.TFrmStrength.$create("CreateNew$2")}
-       else if ($tmp === 3) newform3 = pas.RelaxationPage_U.TFrmRelaxation.$create("CreateNew$2");
-    };
-    this.Time15BtnClick = function (Sender) {
-      var newform1 = null;
-      var newform2 = null;
-      var newform3 = null;
-      this.timechosen = 15;
-      var $tmp = pas.HomePage_U.FrmHome.ExerciseChoice;
-      if ($tmp === 1) {
-        newform1 = pas.WeightLoss10Page_U.TFrmWeightLoss.$create("CreateNew$2")}
-       else if ($tmp === 2) {
-        newform2 = pas.StrengthPage_U.TFrmStrength.$create("CreateNew$2")}
-       else if ($tmp === 3) newform3 = pas.RelaxationPage_U.TFrmRelaxation.$create("CreateNew$2");
-    };
-    this.Time20BtnClick = function (Sender) {
-      var newform1 = null;
-      var newform2 = null;
-      var newform3 = null;
-      this.timechosen = 20;
-      var $tmp = pas.HomePage_U.FrmHome.ExerciseChoice;
-      if ($tmp === 1) {
-        newform1 = pas.WeightLoss10Page_U.TFrmWeightLoss.$create("CreateNew$2")}
-       else if ($tmp === 2) {
-        newform2 = pas.StrengthPage_U.TFrmStrength.$create("CreateNew$2")}
-       else if ($tmp === 3) newform3 = pas.RelaxationPage_U.TFrmRelaxation.$create("CreateNew$2");
-    };
-    this.HomePageClick = function (Sender) {
-      var newform = null;
-      this.Close();
-    };
-    this.LoadDFMValues = function () {
-      pas["WEBLib.Forms"].TCustomForm.LoadDFMValues.call(this);
-      this.TimeLbl = pas["WEBLib.StdCtrls"].TLabel.$create("Create$1",[this]);
-      this.Time10Btn = pas["WEBLib.StdCtrls"].TButton.$create("Create$1",[this]);
-      this.Time15Btn = pas["WEBLib.StdCtrls"].TButton.$create("Create$1",[this]);
-      this.Time20Btn = pas["WEBLib.StdCtrls"].TButton.$create("Create$1",[this]);
-      this.HomePage = pas["WEBLib.StdCtrls"].TButton.$create("Create$1",[this]);
-      this.TimeLbl.BeforeLoadDFMValues();
-      this.Time10Btn.BeforeLoadDFMValues();
-      this.Time15Btn.BeforeLoadDFMValues();
-      this.Time20Btn.BeforeLoadDFMValues();
-      this.HomePage.BeforeLoadDFMValues();
-      try {
-        this.SetName("FrmTimer");
-        this.SetWidth(594);
-        this.SetHeight(537);
-        this.TimeLbl.SetParentComponent(this);
-        this.TimeLbl.SetName("TimeLbl");
-        this.TimeLbl.SetLeft(184);
-        this.TimeLbl.SetTop(96);
-        this.TimeLbl.SetWidth(222);
-        this.TimeLbl.SetHeight(13);
-        this.TimeLbl.SetCaption("Select how long you would like to exercise for:");
-        this.TimeLbl.SetHeightPercent(100.000000000000000000);
-        this.TimeLbl.SetWidthPercent(100.000000000000000000);
-        this.Time10Btn.SetParentComponent(this);
-        this.Time10Btn.SetName("Time10Btn");
-        this.Time10Btn.SetLeft(240);
-        this.Time10Btn.SetTop(152);
-        this.Time10Btn.SetWidth(96);
-        this.Time10Btn.SetHeight(25);
-        this.Time10Btn.SetCaption("10 minutes");
-        this.Time10Btn.SetChildOrderEx(1);
-        this.Time10Btn.SetHeightPercent(100.000000000000000000);
-        this.Time10Btn.SetWidthPercent(100.000000000000000000);
-        this.SetEvent$1(this.Time10Btn,this,"OnClick","Time10BtnClick");
-        this.Time15Btn.SetParentComponent(this);
-        this.Time15Btn.SetName("Time15Btn");
-        this.Time15Btn.SetLeft(240);
-        this.Time15Btn.SetTop(200);
-        this.Time15Btn.SetWidth(96);
-        this.Time15Btn.SetHeight(25);
-        this.Time15Btn.SetCaption("15 minutes");
-        this.Time15Btn.SetChildOrderEx(1);
-        this.Time15Btn.SetHeightPercent(100.000000000000000000);
-        this.Time15Btn.SetWidthPercent(100.000000000000000000);
-        this.SetEvent$1(this.Time15Btn,this,"OnClick","Time10BtnClick");
-        this.Time20Btn.SetParentComponent(this);
-        this.Time20Btn.SetName("Time20Btn");
-        this.Time20Btn.SetLeft(240);
-        this.Time20Btn.SetTop(256);
-        this.Time20Btn.SetWidth(96);
-        this.Time20Btn.SetHeight(25);
-        this.Time20Btn.SetCaption("20 minutes");
-        this.Time20Btn.SetChildOrderEx(1);
-        this.Time20Btn.SetHeightPercent(100.000000000000000000);
-        this.Time20Btn.SetWidthPercent(100.000000000000000000);
-        this.SetEvent$1(this.Time20Btn,this,"OnClick","Time10BtnClick");
         this.HomePage.SetParentComponent(this);
         this.HomePage.SetName("HomePage");
         this.HomePage.SetLeft(8);
@@ -49463,70 +49286,68 @@ rtl.module("TimePage_U",["System","SysUtils","Classes","JS","Web","WEBLib.Graphi
         this.HomePage.SetWidthPercent(100.000000000000000000);
         this.SetEvent$1(this.HomePage,this,"OnClick","HomePageClick");
       } finally {
-        this.TimeLbl.AfterLoadDFMValues();
-        this.Time10Btn.AfterLoadDFMValues();
-        this.Time15Btn.AfterLoadDFMValues();
-        this.Time20Btn.AfterLoadDFMValues();
+        this.WebLabel1.AfterLoadDFMValues();
         this.HomePage.AfterLoadDFMValues();
       };
     };
     rtl.addIntf(this,pas.System.IUnknown);
     var $r = this.$rtti;
-    $r.addField("TimeLbl",pas["WEBLib.StdCtrls"].$rtti["TLabel"]);
-    $r.addField("Time10Btn",pas["WEBLib.StdCtrls"].$rtti["TButton"]);
-    $r.addField("Time15Btn",pas["WEBLib.StdCtrls"].$rtti["TButton"]);
-    $r.addField("Time20Btn",pas["WEBLib.StdCtrls"].$rtti["TButton"]);
+    $r.addField("WebLabel1",pas["WEBLib.StdCtrls"].$rtti["TLabel"]);
     $r.addField("HomePage",pas["WEBLib.StdCtrls"].$rtti["TButton"]);
-    $r.addMethod("Time10BtnClick",0,[["Sender",pas.System.$rtti["TObject"]]]);
-    $r.addMethod("Time15BtnClick",0,[["Sender",pas.System.$rtti["TObject"]]]);
-    $r.addMethod("Time20BtnClick",0,[["Sender",pas.System.$rtti["TObject"]]]);
     $r.addMethod("HomePageClick",0,[["Sender",pas.System.$rtti["TObject"]]]);
   });
-  this.FrmTimer = null;
+  this.FrmPoints = null;
 },["HomePage_U"]);
-rtl.module("WeightLoss10Page_U",["System","SysUtils","Classes","JS","Web","WEBLib.Graphics","WEBLib.Controls","WEBLib.Forms","WEBLib.Dialogs","WEBLib.Controls","WEBLib.StdCtrls","WEBLib.StdCtrls","WEBLib.WebCtrls"],function () {
+rtl.module("WeightLoss15Page_U",["System","SysUtils","Classes","JS","Web","WEBLib.Graphics","WEBLib.Controls","WEBLib.Forms","WEBLib.Dialogs","WEBLib.StdCtrls","WEBLib.StdCtrls","WEBLib.Controls","WEBLib.WebCtrls"],function () {
   "use strict";
   var $mod = this;
-  rtl.createClass(this,"TFrmWeightLoss",pas["WEBLib.Forms"].TForm,function () {
+  rtl.createClass(this,"TFrmWeightLoss15",pas["WEBLib.Forms"].TForm,function () {
     this.$init = function () {
       pas["WEBLib.Forms"].TForm.$init.call(this);
-      this.WeightLossVid = null;
+      this.WeightLoss15Vid = null;
       this.BackBtn = null;
-      this.Time = 0;
+      this.CompleteBtn = null;
     };
     this.$final = function () {
-      this.WeightLossVid = undefined;
+      this.WeightLoss15Vid = undefined;
       this.BackBtn = undefined;
+      this.CompleteBtn = undefined;
       pas["WEBLib.Forms"].TForm.$final.call(this);
     };
     this.WebFormCreate = function (Sender) {
-      this.WeightLossVid.SetVideoID("fUJjsUn9bCo");
+      this.WeightLoss15Vid.SetVideoID("bleOTMDa3_4");
     };
     this.BackBtnClick = function (Sender) {
+      this.Close();
+    };
+    this.CompleteBtnClick = function (Sender) {
       var newform = null;
       this.Close();
+      newform = pas.HomePage_U.TFrmHome.$create("CreateNew$2");
     };
     this.LoadDFMValues = function () {
       pas["WEBLib.Forms"].TCustomForm.LoadDFMValues.call(this);
-      this.WeightLossVid = pas["WEBLib.WebCtrls"].TYoutube.$create("Create$1",[this]);
+      this.WeightLoss15Vid = pas["WEBLib.WebCtrls"].TYoutube.$create("Create$1",[this]);
       this.BackBtn = pas["WEBLib.StdCtrls"].TButton.$create("Create$1",[this]);
-      this.WeightLossVid.BeforeLoadDFMValues();
+      this.CompleteBtn = pas["WEBLib.StdCtrls"].TButton.$create("Create$1",[this]);
+      this.WeightLoss15Vid.BeforeLoadDFMValues();
       this.BackBtn.BeforeLoadDFMValues();
+      this.CompleteBtn.BeforeLoadDFMValues();
       try {
-        this.SetName("FrmWeightLoss");
+        this.SetName("FrmWeightLoss15");
         this.SetWidth(640);
         this.SetHeight(480);
         this.SetEvent(this,"OnCreate","WebFormCreate");
-        this.WeightLossVid.SetParentComponent(this);
-        this.WeightLossVid.SetName("WeightLossVid");
-        this.WeightLossVid.SetLeft(80);
-        this.WeightLossVid.SetTop(16);
-        this.WeightLossVid.SetWidth(480);
-        this.WeightLossVid.SetHeight(360);
-        this.WeightLossVid.SetHeightPercent(100.000000000000000000);
-        this.WeightLossVid.SetWidthPercent(100.000000000000000000);
-        this.WeightLossVid.SetAllowFullScreen(false);
-        this.WeightLossVid.FAutoPlay = false;
+        this.WeightLoss15Vid.SetParentComponent(this);
+        this.WeightLoss15Vid.SetName("WeightLoss15Vid");
+        this.WeightLoss15Vid.SetLeft(80);
+        this.WeightLoss15Vid.SetTop(16);
+        this.WeightLoss15Vid.SetWidth(480);
+        this.WeightLoss15Vid.SetHeight(360);
+        this.WeightLoss15Vid.SetHeightPercent(100.000000000000000000);
+        this.WeightLoss15Vid.SetWidthPercent(100.000000000000000000);
+        this.WeightLoss15Vid.SetAllowFullScreen(false);
+        this.WeightLoss15Vid.FAutoPlay = false;
         this.BackBtn.SetParentComponent(this);
         this.BackBtn.SetName("BackBtn");
         this.BackBtn.SetLeft(8);
@@ -49538,20 +49359,1009 @@ rtl.module("WeightLoss10Page_U",["System","SysUtils","Classes","JS","Web","WEBLi
         this.BackBtn.SetHeightPercent(100.000000000000000000);
         this.BackBtn.SetWidthPercent(100.000000000000000000);
         this.SetEvent$1(this.BackBtn,this,"OnClick","BackBtnClick");
+        this.CompleteBtn.SetParentComponent(this);
+        this.CompleteBtn.SetName("CompleteBtn");
+        this.CompleteBtn.SetLeft(272);
+        this.CompleteBtn.SetTop(408);
+        this.CompleteBtn.SetWidth(96);
+        this.CompleteBtn.SetHeight(25);
+        this.CompleteBtn.SetCaption("Complete");
+        this.CompleteBtn.SetChildOrderEx(2);
+        this.CompleteBtn.SetHeightPercent(100.000000000000000000);
+        this.CompleteBtn.SetWidthPercent(100.000000000000000000);
+        this.SetEvent$1(this.CompleteBtn,this,"OnClick","CompleteBtnClick");
       } finally {
-        this.WeightLossVid.AfterLoadDFMValues();
+        this.WeightLoss15Vid.AfterLoadDFMValues();
         this.BackBtn.AfterLoadDFMValues();
+        this.CompleteBtn.AfterLoadDFMValues();
       };
     };
     rtl.addIntf(this,pas.System.IUnknown);
     var $r = this.$rtti;
-    $r.addField("WeightLossVid",pas["WEBLib.WebCtrls"].$rtti["TYoutube"]);
+    $r.addField("WeightLoss15Vid",pas["WEBLib.WebCtrls"].$rtti["TYoutube"]);
     $r.addField("BackBtn",pas["WEBLib.StdCtrls"].$rtti["TButton"]);
+    $r.addField("CompleteBtn",pas["WEBLib.StdCtrls"].$rtti["TButton"]);
     $r.addMethod("WebFormCreate",0,[["Sender",pas.System.$rtti["TObject"]]]);
     $r.addMethod("BackBtnClick",0,[["Sender",pas.System.$rtti["TObject"]]]);
+    $r.addMethod("CompleteBtnClick",0,[["Sender",pas.System.$rtti["TObject"]]]);
   });
-  this.FrmWeightLoss = null;
-},["HomePage_U","TimePage_U"]);
+  this.FrmWeightLoss15 = null;
+},["HomePage_U","WeightLossTimePage_U"]);
+rtl.module("WeightLoss20Page_U",["System","SysUtils","Classes","JS","Web","WEBLib.Graphics","WEBLib.Controls","WEBLib.Forms","WEBLib.Dialogs","WEBLib.StdCtrls","WEBLib.StdCtrls","WEBLib.Controls","WEBLib.WebCtrls"],function () {
+  "use strict";
+  var $mod = this;
+  rtl.createClass(this,"TFrmWeightLoss20",pas["WEBLib.Forms"].TForm,function () {
+    this.$init = function () {
+      pas["WEBLib.Forms"].TForm.$init.call(this);
+      this.BackBtn = null;
+      this.CompleteBtn = null;
+      this.WeightLoss20Vid = null;
+    };
+    this.$final = function () {
+      this.BackBtn = undefined;
+      this.CompleteBtn = undefined;
+      this.WeightLoss20Vid = undefined;
+      pas["WEBLib.Forms"].TForm.$final.call(this);
+    };
+    this.WebFormCreate = function (Sender) {
+      this.WeightLoss20Vid.SetVideoID("ucJJB14e8Pw");
+    };
+    this.BackBtnClick = function (Sender) {
+      this.Close();
+    };
+    this.CompleteBtnClick = function (Sender) {
+      var newform = null;
+      this.Close();
+      newform = pas.HomePage_U.TFrmHome.$create("CreateNew$2");
+    };
+    this.LoadDFMValues = function () {
+      pas["WEBLib.Forms"].TCustomForm.LoadDFMValues.call(this);
+      this.BackBtn = pas["WEBLib.StdCtrls"].TButton.$create("Create$1",[this]);
+      this.CompleteBtn = pas["WEBLib.StdCtrls"].TButton.$create("Create$1",[this]);
+      this.WeightLoss20Vid = pas["WEBLib.WebCtrls"].TYoutube.$create("Create$1",[this]);
+      this.BackBtn.BeforeLoadDFMValues();
+      this.CompleteBtn.BeforeLoadDFMValues();
+      this.WeightLoss20Vid.BeforeLoadDFMValues();
+      try {
+        this.SetName("FrmWeightLoss20");
+        this.SetWidth(640);
+        this.SetHeight(480);
+        this.SetEvent(this,"OnCreate","WebFormCreate");
+        this.BackBtn.SetParentComponent(this);
+        this.BackBtn.SetName("BackBtn");
+        this.BackBtn.SetLeft(8);
+        this.BackBtn.SetTop(8);
+        this.BackBtn.SetWidth(57);
+        this.BackBtn.SetHeight(25);
+        this.BackBtn.SetCaption("< Back");
+        this.BackBtn.SetChildOrderEx(4);
+        this.BackBtn.SetHeightPercent(100.000000000000000000);
+        this.BackBtn.SetWidthPercent(100.000000000000000000);
+        this.SetEvent$1(this.BackBtn,this,"OnClick","BackBtnClick");
+        this.CompleteBtn.SetParentComponent(this);
+        this.CompleteBtn.SetName("CompleteBtn");
+        this.CompleteBtn.SetLeft(272);
+        this.CompleteBtn.SetTop(408);
+        this.CompleteBtn.SetWidth(96);
+        this.CompleteBtn.SetHeight(25);
+        this.CompleteBtn.SetCaption("Complete");
+        this.CompleteBtn.SetChildOrderEx(2);
+        this.CompleteBtn.SetHeightPercent(100.000000000000000000);
+        this.CompleteBtn.SetWidthPercent(100.000000000000000000);
+        this.SetEvent$1(this.CompleteBtn,this,"OnClick","CompleteBtnClick");
+        this.WeightLoss20Vid.SetParentComponent(this);
+        this.WeightLoss20Vid.SetName("WeightLoss20Vid");
+        this.WeightLoss20Vid.SetLeft(80);
+        this.WeightLoss20Vid.SetTop(32);
+        this.WeightLoss20Vid.SetWidth(480);
+        this.WeightLoss20Vid.SetHeight(360);
+        this.WeightLoss20Vid.SetHeightPercent(100.000000000000000000);
+        this.WeightLoss20Vid.SetWidthPercent(100.000000000000000000);
+        this.WeightLoss20Vid.SetAllowFullScreen(false);
+        this.WeightLoss20Vid.FAutoPlay = false;
+        this.WeightLoss20Vid.SetChildOrderEx(2);
+      } finally {
+        this.BackBtn.AfterLoadDFMValues();
+        this.CompleteBtn.AfterLoadDFMValues();
+        this.WeightLoss20Vid.AfterLoadDFMValues();
+      };
+    };
+    rtl.addIntf(this,pas.System.IUnknown);
+    var $r = this.$rtti;
+    $r.addField("BackBtn",pas["WEBLib.StdCtrls"].$rtti["TButton"]);
+    $r.addField("CompleteBtn",pas["WEBLib.StdCtrls"].$rtti["TButton"]);
+    $r.addField("WeightLoss20Vid",pas["WEBLib.WebCtrls"].$rtti["TYoutube"]);
+    $r.addMethod("WebFormCreate",0,[["Sender",pas.System.$rtti["TObject"]]]);
+    $r.addMethod("BackBtnClick",0,[["Sender",pas.System.$rtti["TObject"]]]);
+    $r.addMethod("CompleteBtnClick",0,[["Sender",pas.System.$rtti["TObject"]]]);
+  });
+  this.FrmWeightLoss20 = null;
+},["HomePage_U","WeightLossTimePage_U"]);
+rtl.module("StrengthTimePage_U",["System","SysUtils","Classes","JS","Web","WEBLib.Graphics","WEBLib.Controls","WEBLib.Forms","WEBLib.Dialogs","WEBLib.Controls","WEBLib.StdCtrls","WEBLib.StdCtrls"],function () {
+  "use strict";
+  var $mod = this;
+  rtl.createClass(this,"TFrmStrengthTimer",pas["WEBLib.Forms"].TForm,function () {
+    this.$init = function () {
+      pas["WEBLib.Forms"].TForm.$init.call(this);
+      this.TimeLbl = null;
+      this.Time10Btn = null;
+      this.Time15Btn = null;
+      this.Time20Btn = null;
+      this.HomePage = null;
+      this.WebLabel1 = null;
+    };
+    this.$final = function () {
+      this.TimeLbl = undefined;
+      this.Time10Btn = undefined;
+      this.Time15Btn = undefined;
+      this.Time20Btn = undefined;
+      this.HomePage = undefined;
+      this.WebLabel1 = undefined;
+      pas["WEBLib.Forms"].TForm.$final.call(this);
+    };
+    rtl.addIntf(this,pas.System.IUnknown);
+    var $r = this.$rtti;
+    $r.addField("TimeLbl",pas["WEBLib.StdCtrls"].$rtti["TWebLabel"]);
+    $r.addField("Time10Btn",pas["WEBLib.StdCtrls"].$rtti["TWebButton"]);
+    $r.addField("Time15Btn",pas["WEBLib.StdCtrls"].$rtti["TWebButton"]);
+    $r.addField("Time20Btn",pas["WEBLib.StdCtrls"].$rtti["TWebButton"]);
+    $r.addField("HomePage",pas["WEBLib.StdCtrls"].$rtti["TWebButton"]);
+    $r.addField("WebLabel1",pas["WEBLib.StdCtrls"].$rtti["TWebLabel"]);
+  });
+  this.FrmStrengthTimer = null;
+});
+rtl.module("Strength10Page_U",["System","SysUtils","Classes","JS","Web","WEBLib.Graphics","WEBLib.Controls","WEBLib.Forms","WEBLib.Dialogs","WEBLib.StdCtrls","WEBLib.StdCtrls","WEBLib.Controls","WEBLib.WebCtrls"],function () {
+  "use strict";
+  var $mod = this;
+  rtl.createClass(this,"TFrmStrength10",pas["WEBLib.Forms"].TForm,function () {
+    this.$init = function () {
+      pas["WEBLib.Forms"].TForm.$init.call(this);
+      this.BackBtn = null;
+      this.CompleteBtn = null;
+      this.Strength10Vid = null;
+    };
+    this.$final = function () {
+      this.BackBtn = undefined;
+      this.CompleteBtn = undefined;
+      this.Strength10Vid = undefined;
+      pas["WEBLib.Forms"].TForm.$final.call(this);
+    };
+    this.WebFormCreate = function (Sender) {
+      this.Strength10Vid.SetVideoID("xcTzzf1l-wA");
+    };
+    this.BackBtnClick = function (Sender) {
+      this.Close();
+    };
+    this.CompleteBtnClick = function (Sender) {
+      var newform = null;
+      this.Close();
+      newform = pas.HomePage_U.TFrmHome.$create("CreateNew$2");
+    };
+    this.LoadDFMValues = function () {
+      pas["WEBLib.Forms"].TCustomForm.LoadDFMValues.call(this);
+      this.BackBtn = pas["WEBLib.StdCtrls"].TButton.$create("Create$1",[this]);
+      this.CompleteBtn = pas["WEBLib.StdCtrls"].TButton.$create("Create$1",[this]);
+      this.Strength10Vid = pas["WEBLib.WebCtrls"].TYoutube.$create("Create$1",[this]);
+      this.BackBtn.BeforeLoadDFMValues();
+      this.CompleteBtn.BeforeLoadDFMValues();
+      this.Strength10Vid.BeforeLoadDFMValues();
+      try {
+        this.SetName("FrmStrength10");
+        this.SetWidth(640);
+        this.SetHeight(480);
+        this.BackBtn.SetParentComponent(this);
+        this.BackBtn.SetName("BackBtn");
+        this.BackBtn.SetLeft(8);
+        this.BackBtn.SetTop(8);
+        this.BackBtn.SetWidth(57);
+        this.BackBtn.SetHeight(25);
+        this.BackBtn.SetCaption("< Back");
+        this.BackBtn.SetChildOrderEx(4);
+        this.BackBtn.SetHeightPercent(100.000000000000000000);
+        this.BackBtn.SetWidthPercent(100.000000000000000000);
+        this.SetEvent$1(this.BackBtn,this,"OnClick","BackBtnClick");
+        this.CompleteBtn.SetParentComponent(this);
+        this.CompleteBtn.SetName("CompleteBtn");
+        this.CompleteBtn.SetLeft(272);
+        this.CompleteBtn.SetTop(408);
+        this.CompleteBtn.SetWidth(96);
+        this.CompleteBtn.SetHeight(25);
+        this.CompleteBtn.SetCaption("Complete");
+        this.CompleteBtn.SetChildOrderEx(2);
+        this.CompleteBtn.SetHeightPercent(100.000000000000000000);
+        this.CompleteBtn.SetWidthPercent(100.000000000000000000);
+        this.SetEvent$1(this.CompleteBtn,this,"OnClick","CompleteBtnClick");
+        this.Strength10Vid.SetParentComponent(this);
+        this.Strength10Vid.SetName("Strength10Vid");
+        this.Strength10Vid.SetLeft(71);
+        this.Strength10Vid.SetTop(32);
+        this.Strength10Vid.SetWidth(480);
+        this.Strength10Vid.SetHeight(360);
+        this.Strength10Vid.SetHeightPercent(100.000000000000000000);
+        this.Strength10Vid.SetWidthPercent(100.000000000000000000);
+        this.Strength10Vid.SetAllowFullScreen(false);
+        this.Strength10Vid.FAutoPlay = false;
+        this.Strength10Vid.SetChildOrderEx(2);
+      } finally {
+        this.BackBtn.AfterLoadDFMValues();
+        this.CompleteBtn.AfterLoadDFMValues();
+        this.Strength10Vid.AfterLoadDFMValues();
+      };
+    };
+    rtl.addIntf(this,pas.System.IUnknown);
+    var $r = this.$rtti;
+    $r.addField("BackBtn",pas["WEBLib.StdCtrls"].$rtti["TButton"]);
+    $r.addField("CompleteBtn",pas["WEBLib.StdCtrls"].$rtti["TButton"]);
+    $r.addField("Strength10Vid",pas["WEBLib.WebCtrls"].$rtti["TYoutube"]);
+    $r.addMethod("WebFormCreate",0,[["Sender",pas.System.$rtti["TObject"]]]);
+    $r.addMethod("BackBtnClick",0,[["Sender",pas.System.$rtti["TObject"]]]);
+    $r.addMethod("CompleteBtnClick",0,[["Sender",pas.System.$rtti["TObject"]]]);
+  });
+  this.FrmStrength10 = null;
+},["HomePage_U","StrengthTimePage_U"]);
+rtl.module("Strength15Page_U",["System","SysUtils","Classes","JS","Web","WEBLib.Graphics","WEBLib.Controls","WEBLib.Forms","WEBLib.Dialogs","WEBLib.StdCtrls","WEBLib.StdCtrls","WEBLib.Controls","WEBLib.WebCtrls"],function () {
+  "use strict";
+  var $mod = this;
+  rtl.createClass(this,"TFrmStrength15",pas["WEBLib.Forms"].TForm,function () {
+    this.$init = function () {
+      pas["WEBLib.Forms"].TForm.$init.call(this);
+      this.Strength15Vid = null;
+      this.BackBtn = null;
+      this.CompleteBtn = null;
+    };
+    this.$final = function () {
+      this.Strength15Vid = undefined;
+      this.BackBtn = undefined;
+      this.CompleteBtn = undefined;
+      pas["WEBLib.Forms"].TForm.$final.call(this);
+    };
+    this.WebFormCreate = function (Sender) {
+      this.Strength15Vid.SetVideoID("lvU8Mhsi7rw");
+    };
+    this.BackBtnClick = function (Sender) {
+      this.Close();
+    };
+    this.CompleteBtnClick = function (Sender) {
+      var newform = null;
+      this.Close();
+      newform = pas.HomePage_U.TFrmHome.$create("CreateNew$2");
+    };
+    this.LoadDFMValues = function () {
+      pas["WEBLib.Forms"].TCustomForm.LoadDFMValues.call(this);
+      this.Strength15Vid = pas["WEBLib.WebCtrls"].TYoutube.$create("Create$1",[this]);
+      this.BackBtn = pas["WEBLib.StdCtrls"].TButton.$create("Create$1",[this]);
+      this.CompleteBtn = pas["WEBLib.StdCtrls"].TButton.$create("Create$1",[this]);
+      this.Strength15Vid.BeforeLoadDFMValues();
+      this.BackBtn.BeforeLoadDFMValues();
+      this.CompleteBtn.BeforeLoadDFMValues();
+      try {
+        this.SetName("FrmStrength15");
+        this.SetWidth(640);
+        this.SetHeight(480);
+        this.Strength15Vid.SetParentComponent(this);
+        this.Strength15Vid.SetName("Strength15Vid");
+        this.Strength15Vid.SetLeft(80);
+        this.Strength15Vid.SetTop(16);
+        this.Strength15Vid.SetWidth(480);
+        this.Strength15Vid.SetHeight(360);
+        this.Strength15Vid.SetHeightPercent(100.000000000000000000);
+        this.Strength15Vid.SetWidthPercent(100.000000000000000000);
+        this.Strength15Vid.SetAllowFullScreen(false);
+        this.Strength15Vid.FAutoPlay = false;
+        this.BackBtn.SetParentComponent(this);
+        this.BackBtn.SetName("BackBtn");
+        this.BackBtn.SetLeft(8);
+        this.BackBtn.SetTop(8);
+        this.BackBtn.SetWidth(57);
+        this.BackBtn.SetHeight(25);
+        this.BackBtn.SetCaption("< Back");
+        this.BackBtn.SetChildOrderEx(4);
+        this.BackBtn.SetHeightPercent(100.000000000000000000);
+        this.BackBtn.SetWidthPercent(100.000000000000000000);
+        this.SetEvent$1(this.BackBtn,this,"OnClick","BackBtnClick");
+        this.CompleteBtn.SetParentComponent(this);
+        this.CompleteBtn.SetName("CompleteBtn");
+        this.CompleteBtn.SetLeft(272);
+        this.CompleteBtn.SetTop(408);
+        this.CompleteBtn.SetWidth(96);
+        this.CompleteBtn.SetHeight(25);
+        this.CompleteBtn.SetCaption("Complete");
+        this.CompleteBtn.SetChildOrderEx(2);
+        this.CompleteBtn.SetHeightPercent(100.000000000000000000);
+        this.CompleteBtn.SetWidthPercent(100.000000000000000000);
+        this.SetEvent$1(this.CompleteBtn,this,"OnClick","CompleteBtnClick");
+      } finally {
+        this.Strength15Vid.AfterLoadDFMValues();
+        this.BackBtn.AfterLoadDFMValues();
+        this.CompleteBtn.AfterLoadDFMValues();
+      };
+    };
+    rtl.addIntf(this,pas.System.IUnknown);
+    var $r = this.$rtti;
+    $r.addField("Strength15Vid",pas["WEBLib.WebCtrls"].$rtti["TYoutube"]);
+    $r.addField("BackBtn",pas["WEBLib.StdCtrls"].$rtti["TButton"]);
+    $r.addField("CompleteBtn",pas["WEBLib.StdCtrls"].$rtti["TButton"]);
+    $r.addMethod("WebFormCreate",0,[["Sender",pas.System.$rtti["TObject"]]]);
+    $r.addMethod("BackBtnClick",0,[["Sender",pas.System.$rtti["TObject"]]]);
+    $r.addMethod("CompleteBtnClick",0,[["Sender",pas.System.$rtti["TObject"]]]);
+  });
+  this.FrmStrength15 = null;
+},["HomePage_U","StrengthTimePage_U"]);
+rtl.module("Strength20Page_U",["System","SysUtils","Classes","JS","Web","WEBLib.Graphics","WEBLib.Controls","WEBLib.Forms","WEBLib.Dialogs","WEBLib.StdCtrls","WEBLib.StdCtrls","WEBLib.Controls","WEBLib.WebCtrls"],function () {
+  "use strict";
+  var $mod = this;
+  rtl.createClass(this,"TFrmStrength20",pas["WEBLib.Forms"].TForm,function () {
+    this.$init = function () {
+      pas["WEBLib.Forms"].TForm.$init.call(this);
+      this.Strength20Vid = null;
+      this.BackBtn = null;
+      this.CompleteBtn = null;
+    };
+    this.$final = function () {
+      this.Strength20Vid = undefined;
+      this.BackBtn = undefined;
+      this.CompleteBtn = undefined;
+      pas["WEBLib.Forms"].TForm.$final.call(this);
+    };
+    this.WebFormCreate = function (Sender) {
+      this.Strength20Vid.SetVideoID("9lVBk1gS6qc");
+    };
+    this.BackBtnClick = function (Sender) {
+      this.Close();
+    };
+    this.CompleteBtnClick = function (Sender) {
+      var newform = null;
+      this.Close();
+      newform = pas.HomePage_U.TFrmHome.$create("CreateNew$2");
+    };
+    this.LoadDFMValues = function () {
+      pas["WEBLib.Forms"].TCustomForm.LoadDFMValues.call(this);
+      this.Strength20Vid = pas["WEBLib.WebCtrls"].TYoutube.$create("Create$1",[this]);
+      this.BackBtn = pas["WEBLib.StdCtrls"].TButton.$create("Create$1",[this]);
+      this.CompleteBtn = pas["WEBLib.StdCtrls"].TButton.$create("Create$1",[this]);
+      this.Strength20Vid.BeforeLoadDFMValues();
+      this.BackBtn.BeforeLoadDFMValues();
+      this.CompleteBtn.BeforeLoadDFMValues();
+      try {
+        this.SetName("FrmStrength20");
+        this.SetWidth(640);
+        this.SetHeight(480);
+        this.Strength20Vid.SetParentComponent(this);
+        this.Strength20Vid.SetName("Strength20Vid");
+        this.Strength20Vid.SetLeft(80);
+        this.Strength20Vid.SetTop(16);
+        this.Strength20Vid.SetWidth(480);
+        this.Strength20Vid.SetHeight(360);
+        this.Strength20Vid.SetHeightPercent(100.000000000000000000);
+        this.Strength20Vid.SetWidthPercent(100.000000000000000000);
+        this.Strength20Vid.SetAllowFullScreen(false);
+        this.Strength20Vid.FAutoPlay = false;
+        this.BackBtn.SetParentComponent(this);
+        this.BackBtn.SetName("BackBtn");
+        this.BackBtn.SetLeft(8);
+        this.BackBtn.SetTop(8);
+        this.BackBtn.SetWidth(57);
+        this.BackBtn.SetHeight(25);
+        this.BackBtn.SetCaption("< Back");
+        this.BackBtn.SetChildOrderEx(4);
+        this.BackBtn.SetHeightPercent(100.000000000000000000);
+        this.BackBtn.SetWidthPercent(100.000000000000000000);
+        this.SetEvent$1(this.BackBtn,this,"OnClick","BackBtnClick");
+        this.CompleteBtn.SetParentComponent(this);
+        this.CompleteBtn.SetName("CompleteBtn");
+        this.CompleteBtn.SetLeft(272);
+        this.CompleteBtn.SetTop(408);
+        this.CompleteBtn.SetWidth(96);
+        this.CompleteBtn.SetHeight(25);
+        this.CompleteBtn.SetCaption("Complete");
+        this.CompleteBtn.SetChildOrderEx(2);
+        this.CompleteBtn.SetHeightPercent(100.000000000000000000);
+        this.CompleteBtn.SetWidthPercent(100.000000000000000000);
+        this.SetEvent$1(this.CompleteBtn,this,"OnClick","CompleteBtnClick");
+      } finally {
+        this.Strength20Vid.AfterLoadDFMValues();
+        this.BackBtn.AfterLoadDFMValues();
+        this.CompleteBtn.AfterLoadDFMValues();
+      };
+    };
+    rtl.addIntf(this,pas.System.IUnknown);
+    var $r = this.$rtti;
+    $r.addField("Strength20Vid",pas["WEBLib.WebCtrls"].$rtti["TYoutube"]);
+    $r.addField("BackBtn",pas["WEBLib.StdCtrls"].$rtti["TButton"]);
+    $r.addField("CompleteBtn",pas["WEBLib.StdCtrls"].$rtti["TButton"]);
+    $r.addMethod("WebFormCreate",0,[["Sender",pas.System.$rtti["TObject"]]]);
+    $r.addMethod("BackBtnClick",0,[["Sender",pas.System.$rtti["TObject"]]]);
+    $r.addMethod("CompleteBtnClick",0,[["Sender",pas.System.$rtti["TObject"]]]);
+  });
+  this.FrmStrength20 = null;
+},["HomePage_U","StrengthTimePage_U"]);
+rtl.module("RelaxationTimePage_U",["System","SysUtils","Classes","JS","Web","WEBLib.Graphics","WEBLib.Controls","WEBLib.Forms","WEBLib.Dialogs","WEBLib.Controls","WEBLib.StdCtrls","WEBLib.StdCtrls"],function () {
+  "use strict";
+  var $mod = this;
+  rtl.createClass(this,"TFrmRelaxationTimer",pas["WEBLib.Forms"].TForm,function () {
+    this.$init = function () {
+      pas["WEBLib.Forms"].TForm.$init.call(this);
+      this.TimeLbl = null;
+      this.Time10Btn = null;
+      this.Time15Btn = null;
+      this.Time20Btn = null;
+      this.HomePage = null;
+      this.WebLabel1 = null;
+    };
+    this.$final = function () {
+      this.TimeLbl = undefined;
+      this.Time10Btn = undefined;
+      this.Time15Btn = undefined;
+      this.Time20Btn = undefined;
+      this.HomePage = undefined;
+      this.WebLabel1 = undefined;
+      pas["WEBLib.Forms"].TForm.$final.call(this);
+    };
+    rtl.addIntf(this,pas.System.IUnknown);
+    var $r = this.$rtti;
+    $r.addField("TimeLbl",pas["WEBLib.StdCtrls"].$rtti["TWebLabel"]);
+    $r.addField("Time10Btn",pas["WEBLib.StdCtrls"].$rtti["TWebButton"]);
+    $r.addField("Time15Btn",pas["WEBLib.StdCtrls"].$rtti["TWebButton"]);
+    $r.addField("Time20Btn",pas["WEBLib.StdCtrls"].$rtti["TWebButton"]);
+    $r.addField("HomePage",pas["WEBLib.StdCtrls"].$rtti["TWebButton"]);
+    $r.addField("WebLabel1",pas["WEBLib.StdCtrls"].$rtti["TWebLabel"]);
+  });
+  this.FrmRelaxationTimer = null;
+});
+rtl.module("Relaxation10Page_U",["System","SysUtils","Classes","JS","Web","WEBLib.Graphics","WEBLib.Controls","WEBLib.Forms","WEBLib.Dialogs","WEBLib.StdCtrls","WEBLib.StdCtrls","WEBLib.Controls","WEBLib.WebCtrls"],function () {
+  "use strict";
+  var $mod = this;
+  rtl.createClass(this,"TFrmRelaxation10",pas["WEBLib.Forms"].TForm,function () {
+    this.$init = function () {
+      pas["WEBLib.Forms"].TForm.$init.call(this);
+      this.Relaxation10Vid = null;
+      this.BackBtn = null;
+      this.CompleteBtn = null;
+    };
+    this.$final = function () {
+      this.Relaxation10Vid = undefined;
+      this.BackBtn = undefined;
+      this.CompleteBtn = undefined;
+      pas["WEBLib.Forms"].TForm.$final.call(this);
+    };
+    this.WebFormCreate = function (Sender) {
+      this.Relaxation10Vid.SetVideoID("A0pkEgZiRG4");
+    };
+    this.BackBtnClick = function (Sender) {
+      this.Close();
+    };
+    this.CompleteBtnClick = function (Sender) {
+      var newform = null;
+      this.Close();
+      newform = pas.HomePage_U.TFrmHome.$create("CreateNew$2");
+    };
+    this.LoadDFMValues = function () {
+      pas["WEBLib.Forms"].TCustomForm.LoadDFMValues.call(this);
+      this.Relaxation10Vid = pas["WEBLib.WebCtrls"].TYoutube.$create("Create$1",[this]);
+      this.BackBtn = pas["WEBLib.StdCtrls"].TButton.$create("Create$1",[this]);
+      this.CompleteBtn = pas["WEBLib.StdCtrls"].TButton.$create("Create$1",[this]);
+      this.Relaxation10Vid.BeforeLoadDFMValues();
+      this.BackBtn.BeforeLoadDFMValues();
+      this.CompleteBtn.BeforeLoadDFMValues();
+      try {
+        this.SetName("FrmRelaxation10");
+        this.SetWidth(640);
+        this.SetHeight(480);
+        this.Relaxation10Vid.SetParentComponent(this);
+        this.Relaxation10Vid.SetName("Relaxation10Vid");
+        this.Relaxation10Vid.SetLeft(80);
+        this.Relaxation10Vid.SetTop(16);
+        this.Relaxation10Vid.SetWidth(480);
+        this.Relaxation10Vid.SetHeight(360);
+        this.Relaxation10Vid.SetHeightPercent(100.000000000000000000);
+        this.Relaxation10Vid.SetWidthPercent(100.000000000000000000);
+        this.Relaxation10Vid.SetAllowFullScreen(false);
+        this.Relaxation10Vid.FAutoPlay = false;
+        this.BackBtn.SetParentComponent(this);
+        this.BackBtn.SetName("BackBtn");
+        this.BackBtn.SetLeft(8);
+        this.BackBtn.SetTop(8);
+        this.BackBtn.SetWidth(57);
+        this.BackBtn.SetHeight(25);
+        this.BackBtn.SetCaption("< Back");
+        this.BackBtn.SetChildOrderEx(4);
+        this.BackBtn.SetHeightPercent(100.000000000000000000);
+        this.BackBtn.SetWidthPercent(100.000000000000000000);
+        this.SetEvent$1(this.BackBtn,this,"OnClick","BackBtnClick");
+        this.CompleteBtn.SetParentComponent(this);
+        this.CompleteBtn.SetName("CompleteBtn");
+        this.CompleteBtn.SetLeft(272);
+        this.CompleteBtn.SetTop(408);
+        this.CompleteBtn.SetWidth(96);
+        this.CompleteBtn.SetHeight(25);
+        this.CompleteBtn.SetCaption("Complete");
+        this.CompleteBtn.SetChildOrderEx(2);
+        this.CompleteBtn.SetHeightPercent(100.000000000000000000);
+        this.CompleteBtn.SetWidthPercent(100.000000000000000000);
+        this.SetEvent$1(this.CompleteBtn,this,"OnClick","CompleteBtnClick");
+      } finally {
+        this.Relaxation10Vid.AfterLoadDFMValues();
+        this.BackBtn.AfterLoadDFMValues();
+        this.CompleteBtn.AfterLoadDFMValues();
+      };
+    };
+    rtl.addIntf(this,pas.System.IUnknown);
+    var $r = this.$rtti;
+    $r.addField("Relaxation10Vid",pas["WEBLib.WebCtrls"].$rtti["TYoutube"]);
+    $r.addField("BackBtn",pas["WEBLib.StdCtrls"].$rtti["TButton"]);
+    $r.addField("CompleteBtn",pas["WEBLib.StdCtrls"].$rtti["TButton"]);
+    $r.addMethod("WebFormCreate",0,[["Sender",pas.System.$rtti["TObject"]]]);
+    $r.addMethod("BackBtnClick",0,[["Sender",pas.System.$rtti["TObject"]]]);
+    $r.addMethod("CompleteBtnClick",0,[["Sender",pas.System.$rtti["TObject"]]]);
+  });
+  this.FrmRelaxation10 = null;
+},["HomePage_U","RelaxationTimePage_U"]);
+rtl.module("Relaxation15Page_U",["System","SysUtils","Classes","JS","Web","WEBLib.Graphics","WEBLib.Controls","WEBLib.Forms","WEBLib.Dialogs","WEBLib.StdCtrls","WEBLib.StdCtrls","WEBLib.Controls","WEBLib.WebCtrls"],function () {
+  "use strict";
+  var $mod = this;
+  rtl.createClass(this,"TFrmRelaxation15",pas["WEBLib.Forms"].TForm,function () {
+    this.$init = function () {
+      pas["WEBLib.Forms"].TForm.$init.call(this);
+      this.Relaxation15Vid = null;
+      this.BackBtn = null;
+      this.CompleteBtn = null;
+    };
+    this.$final = function () {
+      this.Relaxation15Vid = undefined;
+      this.BackBtn = undefined;
+      this.CompleteBtn = undefined;
+      pas["WEBLib.Forms"].TForm.$final.call(this);
+    };
+    this.WebFormCreate = function (Sender) {
+      this.Relaxation15Vid.SetVideoID("utrAlZf_Pjs");
+    };
+    this.BackBtnClick = function (Sender) {
+      this.Close();
+    };
+    this.CompleteBtnClick = function (Sender) {
+      var newform = null;
+      this.Close();
+      newform = pas.HomePage_U.TFrmHome.$create("CreateNew$2");
+    };
+    this.LoadDFMValues = function () {
+      pas["WEBLib.Forms"].TCustomForm.LoadDFMValues.call(this);
+      this.Relaxation15Vid = pas["WEBLib.WebCtrls"].TYoutube.$create("Create$1",[this]);
+      this.BackBtn = pas["WEBLib.StdCtrls"].TButton.$create("Create$1",[this]);
+      this.CompleteBtn = pas["WEBLib.StdCtrls"].TButton.$create("Create$1",[this]);
+      this.Relaxation15Vid.BeforeLoadDFMValues();
+      this.BackBtn.BeforeLoadDFMValues();
+      this.CompleteBtn.BeforeLoadDFMValues();
+      try {
+        this.SetName("FrmRelaxation15");
+        this.SetWidth(640);
+        this.SetHeight(480);
+        this.Relaxation15Vid.SetParentComponent(this);
+        this.Relaxation15Vid.SetName("Relaxation15Vid");
+        this.Relaxation15Vid.SetLeft(80);
+        this.Relaxation15Vid.SetTop(16);
+        this.Relaxation15Vid.SetWidth(480);
+        this.Relaxation15Vid.SetHeight(360);
+        this.Relaxation15Vid.SetHeightPercent(100.000000000000000000);
+        this.Relaxation15Vid.SetWidthPercent(100.000000000000000000);
+        this.Relaxation15Vid.SetAllowFullScreen(false);
+        this.Relaxation15Vid.FAutoPlay = false;
+        this.BackBtn.SetParentComponent(this);
+        this.BackBtn.SetName("BackBtn");
+        this.BackBtn.SetLeft(8);
+        this.BackBtn.SetTop(8);
+        this.BackBtn.SetWidth(57);
+        this.BackBtn.SetHeight(25);
+        this.BackBtn.SetCaption("< Back");
+        this.BackBtn.SetChildOrderEx(4);
+        this.BackBtn.SetHeightPercent(100.000000000000000000);
+        this.BackBtn.SetWidthPercent(100.000000000000000000);
+        this.SetEvent$1(this.BackBtn,this,"OnClick","BackBtnClick");
+        this.CompleteBtn.SetParentComponent(this);
+        this.CompleteBtn.SetName("CompleteBtn");
+        this.CompleteBtn.SetLeft(272);
+        this.CompleteBtn.SetTop(408);
+        this.CompleteBtn.SetWidth(96);
+        this.CompleteBtn.SetHeight(25);
+        this.CompleteBtn.SetCaption("Complete");
+        this.CompleteBtn.SetChildOrderEx(2);
+        this.CompleteBtn.SetHeightPercent(100.000000000000000000);
+        this.CompleteBtn.SetWidthPercent(100.000000000000000000);
+        this.SetEvent$1(this.CompleteBtn,this,"OnClick","CompleteBtnClick");
+      } finally {
+        this.Relaxation15Vid.AfterLoadDFMValues();
+        this.BackBtn.AfterLoadDFMValues();
+        this.CompleteBtn.AfterLoadDFMValues();
+      };
+    };
+    rtl.addIntf(this,pas.System.IUnknown);
+    var $r = this.$rtti;
+    $r.addField("Relaxation15Vid",pas["WEBLib.WebCtrls"].$rtti["TYoutube"]);
+    $r.addField("BackBtn",pas["WEBLib.StdCtrls"].$rtti["TButton"]);
+    $r.addField("CompleteBtn",pas["WEBLib.StdCtrls"].$rtti["TButton"]);
+    $r.addMethod("WebFormCreate",0,[["Sender",pas.System.$rtti["TObject"]]]);
+    $r.addMethod("BackBtnClick",0,[["Sender",pas.System.$rtti["TObject"]]]);
+    $r.addMethod("CompleteBtnClick",0,[["Sender",pas.System.$rtti["TObject"]]]);
+  });
+  this.FrmRelaxation15 = null;
+},["HomePage_U","RelaxationTimePage_U"]);
+rtl.module("Relaxation20Page_U",["System","SysUtils","Classes","JS","Web","WEBLib.Graphics","WEBLib.Controls","WEBLib.Forms","WEBLib.Dialogs","WEBLib.StdCtrls","WEBLib.StdCtrls","WEBLib.Controls","WEBLib.WebCtrls"],function () {
+  "use strict";
+  var $mod = this;
+  rtl.createClass(this,"TFrmRelaxation20",pas["WEBLib.Forms"].TForm,function () {
+    this.$init = function () {
+      pas["WEBLib.Forms"].TForm.$init.call(this);
+      this.Relaxation20Vid = null;
+      this.BackBtn = null;
+      this.CompleteBtn = null;
+    };
+    this.$final = function () {
+      this.Relaxation20Vid = undefined;
+      this.BackBtn = undefined;
+      this.CompleteBtn = undefined;
+      pas["WEBLib.Forms"].TForm.$final.call(this);
+    };
+    this.WebFormCreate = function (Sender) {
+      this.Relaxation20Vid.SetVideoID("MvrwxWlwPVY");
+    };
+    this.BackBtnClick = function (Sender) {
+      this.Close();
+    };
+    this.CompleteBtnClick = function (Sender) {
+      var newform = null;
+      this.Close();
+      newform = pas.HomePage_U.TFrmHome.$create("CreateNew$2");
+    };
+    this.LoadDFMValues = function () {
+      pas["WEBLib.Forms"].TCustomForm.LoadDFMValues.call(this);
+      this.Relaxation20Vid = pas["WEBLib.WebCtrls"].TYoutube.$create("Create$1",[this]);
+      this.BackBtn = pas["WEBLib.StdCtrls"].TButton.$create("Create$1",[this]);
+      this.CompleteBtn = pas["WEBLib.StdCtrls"].TButton.$create("Create$1",[this]);
+      this.Relaxation20Vid.BeforeLoadDFMValues();
+      this.BackBtn.BeforeLoadDFMValues();
+      this.CompleteBtn.BeforeLoadDFMValues();
+      try {
+        this.SetName("FrmRelaxation20");
+        this.SetWidth(640);
+        this.SetHeight(480);
+        this.Relaxation20Vid.SetParentComponent(this);
+        this.Relaxation20Vid.SetName("Relaxation20Vid");
+        this.Relaxation20Vid.SetLeft(80);
+        this.Relaxation20Vid.SetTop(16);
+        this.Relaxation20Vid.SetWidth(480);
+        this.Relaxation20Vid.SetHeight(360);
+        this.Relaxation20Vid.SetHeightPercent(100.000000000000000000);
+        this.Relaxation20Vid.SetWidthPercent(100.000000000000000000);
+        this.Relaxation20Vid.SetAllowFullScreen(false);
+        this.Relaxation20Vid.FAutoPlay = false;
+        this.BackBtn.SetParentComponent(this);
+        this.BackBtn.SetName("BackBtn");
+        this.BackBtn.SetLeft(8);
+        this.BackBtn.SetTop(8);
+        this.BackBtn.SetWidth(57);
+        this.BackBtn.SetHeight(25);
+        this.BackBtn.SetCaption("< Back");
+        this.BackBtn.SetChildOrderEx(4);
+        this.BackBtn.SetHeightPercent(100.000000000000000000);
+        this.BackBtn.SetWidthPercent(100.000000000000000000);
+        this.SetEvent$1(this.BackBtn,this,"OnClick","BackBtnClick");
+        this.CompleteBtn.SetParentComponent(this);
+        this.CompleteBtn.SetName("CompleteBtn");
+        this.CompleteBtn.SetLeft(272);
+        this.CompleteBtn.SetTop(408);
+        this.CompleteBtn.SetWidth(96);
+        this.CompleteBtn.SetHeight(25);
+        this.CompleteBtn.SetCaption("Complete");
+        this.CompleteBtn.SetChildOrderEx(2);
+        this.CompleteBtn.SetHeightPercent(100.000000000000000000);
+        this.CompleteBtn.SetWidthPercent(100.000000000000000000);
+        this.SetEvent$1(this.CompleteBtn,this,"OnClick","CompleteBtnClick");
+      } finally {
+        this.Relaxation20Vid.AfterLoadDFMValues();
+        this.BackBtn.AfterLoadDFMValues();
+        this.CompleteBtn.AfterLoadDFMValues();
+      };
+    };
+    rtl.addIntf(this,pas.System.IUnknown);
+    var $r = this.$rtti;
+    $r.addField("Relaxation20Vid",pas["WEBLib.WebCtrls"].$rtti["TYoutube"]);
+    $r.addField("BackBtn",pas["WEBLib.StdCtrls"].$rtti["TButton"]);
+    $r.addField("CompleteBtn",pas["WEBLib.StdCtrls"].$rtti["TButton"]);
+    $r.addMethod("WebFormCreate",0,[["Sender",pas.System.$rtti["TObject"]]]);
+    $r.addMethod("BackBtnClick",0,[["Sender",pas.System.$rtti["TObject"]]]);
+    $r.addMethod("CompleteBtnClick",0,[["Sender",pas.System.$rtti["TObject"]]]);
+  });
+  this.FrmRelaxation20 = null;
+},["HomePage_U","RelaxationTimePage_U"]);
+rtl.module("WeightLossTimePage_U",["System","SysUtils","Classes","JS","Web","WEBLib.Graphics","WEBLib.Controls","WEBLib.Forms","WEBLib.Dialogs","WEBLib.Controls","WEBLib.StdCtrls","WEBLib.StdCtrls","PointsPage_U","WeightLoss10Page_U","WeightLoss15Page_U","WeightLoss20Page_U","Strength10Page_U","Strength15Page_U","Strength20Page_U","Relaxation10Page_U","Relaxation15Page_U","Relaxation20Page_U"],function () {
+  "use strict";
+  var $mod = this;
+  rtl.createClass(this,"TFrmWeightLossTimer",pas["WEBLib.Forms"].TForm,function () {
+    this.$init = function () {
+      pas["WEBLib.Forms"].TForm.$init.call(this);
+      this.TimeLbl = null;
+      this.Time10Btn = null;
+      this.Time15Btn = null;
+      this.Time20Btn = null;
+      this.HomePage = null;
+      this.WebLabel1 = null;
+    };
+    this.$final = function () {
+      this.TimeLbl = undefined;
+      this.Time10Btn = undefined;
+      this.Time15Btn = undefined;
+      this.Time20Btn = undefined;
+      this.HomePage = undefined;
+      this.WebLabel1 = undefined;
+      pas["WEBLib.Forms"].TForm.$final.call(this);
+    };
+    this.Time10BtnClick = function (Sender) {
+      var newform = null;
+      newform = pas.WeightLoss10Page_U.TFrmWeightLoss10.$create("CreateNew$2");
+    };
+    this.Time15BtnClick = function (Sender) {
+      var newform = null;
+      newform = pas.WeightLoss15Page_U.TFrmWeightLoss15.$create("CreateNew$2");
+    };
+    this.Time20BtnClick = function (Sender) {
+      var newform = null;
+      newform = pas.WeightLoss20Page_U.TFrmWeightLoss20.$create("CreateNew$2");
+    };
+    this.HomePageClick = function (Sender) {
+      var newform = null;
+      this.Close();
+    };
+    rtl.addIntf(this,pas.System.IUnknown);
+    var $r = this.$rtti;
+    $r.addField("TimeLbl",pas["WEBLib.StdCtrls"].$rtti["TWebLabel"]);
+    $r.addField("Time10Btn",pas["WEBLib.StdCtrls"].$rtti["TWebButton"]);
+    $r.addField("Time15Btn",pas["WEBLib.StdCtrls"].$rtti["TWebButton"]);
+    $r.addField("Time20Btn",pas["WEBLib.StdCtrls"].$rtti["TWebButton"]);
+    $r.addField("HomePage",pas["WEBLib.StdCtrls"].$rtti["TWebButton"]);
+    $r.addField("WebLabel1",pas["WEBLib.StdCtrls"].$rtti["TWebLabel"]);
+    $r.addMethod("Time10BtnClick",0,[["Sender",pas.System.$rtti["TObject"]]]);
+    $r.addMethod("Time15BtnClick",0,[["Sender",pas.System.$rtti["TObject"]]]);
+    $r.addMethod("Time20BtnClick",0,[["Sender",pas.System.$rtti["TObject"]]]);
+    $r.addMethod("HomePageClick",0,[["Sender",pas.System.$rtti["TObject"]]]);
+  });
+  this.FrmWeightLossTimer = null;
+},["HomePage_U"]);
+rtl.module("WeightLoss10Page_U",["System","SysUtils","Classes","JS","Web","WEBLib.Graphics","WEBLib.Controls","WEBLib.Forms","WEBLib.Dialogs","WEBLib.Controls","WEBLib.StdCtrls","WEBLib.StdCtrls","WEBLib.WebCtrls"],function () {
+  "use strict";
+  var $mod = this;
+  rtl.createClass(this,"TFrmWeightLoss10",pas["WEBLib.Forms"].TForm,function () {
+    this.$init = function () {
+      pas["WEBLib.Forms"].TForm.$init.call(this);
+      this.WeightLoss10Vid = null;
+      this.BackBtn = null;
+      this.CompleteBtn = null;
+      this.Time = 0;
+    };
+    this.$final = function () {
+      this.WeightLoss10Vid = undefined;
+      this.BackBtn = undefined;
+      this.CompleteBtn = undefined;
+      pas["WEBLib.Forms"].TForm.$final.call(this);
+    };
+    this.WebFormCreate = function (Sender) {
+      this.WeightLoss10Vid.SetVideoID("fUJjsUn9bCo");
+    };
+    this.BackBtnClick = function (Sender) {
+      this.Close();
+    };
+    this.CompleteBtnClick = function (Sender) {
+      var newform = null;
+      this.Close();
+      newform = pas.HomePage_U.TFrmHome.$create("CreateNew$2");
+    };
+    this.LoadDFMValues = function () {
+      pas["WEBLib.Forms"].TCustomForm.LoadDFMValues.call(this);
+      this.WeightLoss10Vid = pas["WEBLib.WebCtrls"].TYoutube.$create("Create$1",[this]);
+      this.BackBtn = pas["WEBLib.StdCtrls"].TButton.$create("Create$1",[this]);
+      this.CompleteBtn = pas["WEBLib.StdCtrls"].TButton.$create("Create$1",[this]);
+      this.WeightLoss10Vid.BeforeLoadDFMValues();
+      this.BackBtn.BeforeLoadDFMValues();
+      this.CompleteBtn.BeforeLoadDFMValues();
+      try {
+        this.SetName("FrmWeightLoss10");
+        this.SetWidth(640);
+        this.SetHeight(480);
+        this.SetEvent(this,"OnCreate","WebFormCreate");
+        this.WeightLoss10Vid.SetParentComponent(this);
+        this.WeightLoss10Vid.SetName("WeightLoss10Vid");
+        this.WeightLoss10Vid.SetLeft(80);
+        this.WeightLoss10Vid.SetTop(16);
+        this.WeightLoss10Vid.SetWidth(480);
+        this.WeightLoss10Vid.SetHeight(360);
+        this.WeightLoss10Vid.SetHeightPercent(100.000000000000000000);
+        this.WeightLoss10Vid.SetWidthPercent(100.000000000000000000);
+        this.WeightLoss10Vid.SetAllowFullScreen(false);
+        this.WeightLoss10Vid.FAutoPlay = false;
+        this.BackBtn.SetParentComponent(this);
+        this.BackBtn.SetName("BackBtn");
+        this.BackBtn.SetLeft(8);
+        this.BackBtn.SetTop(8);
+        this.BackBtn.SetWidth(57);
+        this.BackBtn.SetHeight(25);
+        this.BackBtn.SetCaption("< Back");
+        this.BackBtn.SetChildOrderEx(4);
+        this.BackBtn.SetHeightPercent(100.000000000000000000);
+        this.BackBtn.SetWidthPercent(100.000000000000000000);
+        this.SetEvent$1(this.BackBtn,this,"OnClick","BackBtnClick");
+        this.CompleteBtn.SetParentComponent(this);
+        this.CompleteBtn.SetName("CompleteBtn");
+        this.CompleteBtn.SetLeft(272);
+        this.CompleteBtn.SetTop(408);
+        this.CompleteBtn.SetWidth(96);
+        this.CompleteBtn.SetHeight(25);
+        this.CompleteBtn.SetCaption("Complete");
+        this.CompleteBtn.SetChildOrderEx(2);
+        this.CompleteBtn.SetHeightPercent(100.000000000000000000);
+        this.CompleteBtn.SetWidthPercent(100.000000000000000000);
+        this.SetEvent$1(this.CompleteBtn,this,"OnClick","CompleteBtnClick");
+      } finally {
+        this.WeightLoss10Vid.AfterLoadDFMValues();
+        this.BackBtn.AfterLoadDFMValues();
+        this.CompleteBtn.AfterLoadDFMValues();
+      };
+    };
+    rtl.addIntf(this,pas.System.IUnknown);
+    var $r = this.$rtti;
+    $r.addField("WeightLoss10Vid",pas["WEBLib.WebCtrls"].$rtti["TYoutube"]);
+    $r.addField("BackBtn",pas["WEBLib.StdCtrls"].$rtti["TButton"]);
+    $r.addField("CompleteBtn",pas["WEBLib.StdCtrls"].$rtti["TButton"]);
+    $r.addMethod("WebFormCreate",0,[["Sender",pas.System.$rtti["TObject"]]]);
+    $r.addMethod("BackBtnClick",0,[["Sender",pas.System.$rtti["TObject"]]]);
+    $r.addMethod("CompleteBtnClick",0,[["Sender",pas.System.$rtti["TObject"]]]);
+  });
+  this.FrmWeightLoss10 = null;
+},["HomePage_U","WeightLossTimePage_U"]);
+rtl.module("TimePage_U",["System","SysUtils","Classes","JS","Web","WEBLib.Graphics","WEBLib.Controls","WEBLib.Forms","WEBLib.Dialogs","WEBLib.Controls","WEBLib.StdCtrls","WEBLib.StdCtrls","PointsPage_U","WeightLoss10Page_U","WeightLoss15Page_U","WeightLoss20Page_U","Strength10Page_U","Strength15Page_U","Strength20Page_U","Relaxation10Page_U","Relaxation15Page_U","Relaxation20Page_U"],function () {
+  "use strict";
+  var $mod = this;
+  rtl.createClass(this,"TFrmTimer",pas["WEBLib.Forms"].TForm,function () {
+    this.$init = function () {
+      pas["WEBLib.Forms"].TForm.$init.call(this);
+      this.HomePage = null;
+      this.Time10Btn = null;
+      this.Time15Btn = null;
+      this.Time20Btn = null;
+      this.WebLabel1 = null;
+    };
+    this.$final = function () {
+      this.HomePage = undefined;
+      this.Time10Btn = undefined;
+      this.Time15Btn = undefined;
+      this.Time20Btn = undefined;
+      this.WebLabel1 = undefined;
+      pas["WEBLib.Forms"].TForm.$final.call(this);
+    };
+    this.Time10BtnClick = function (Sender) {
+      var newform1 = null;
+      var newform2 = null;
+      var newform3 = null;
+      var $tmp = pas.HomePage_U.FrmHome.ExerciseChoice;
+      if ($tmp === 1) {
+        newform1 = pas.WeightLoss10Page_U.TFrmWeightLoss10.$create("CreateNew$2")}
+       else if ($tmp === 2) {
+        newform2 = pas.Strength10Page_U.TFrmStrength10.$create("CreateNew$2")}
+       else if ($tmp === 3) newform3 = pas.Relaxation10Page_U.TFrmRelaxation10.$create("CreateNew$2");
+    };
+    this.Time15BtnClick = function (Sender) {
+      var newform1 = null;
+      var newform2 = null;
+      var newform3 = null;
+      var $tmp = pas.HomePage_U.FrmHome.ExerciseChoice;
+      if ($tmp === 1) {
+        newform1 = pas.WeightLoss15Page_U.TFrmWeightLoss15.$create("CreateNew$2")}
+       else if ($tmp === 2) {
+        newform2 = pas.Strength15Page_U.TFrmStrength15.$create("CreateNew$2")}
+       else if ($tmp === 3) newform3 = pas.Relaxation15Page_U.TFrmRelaxation15.$create("CreateNew$2");
+    };
+    this.HomePageClick = function (Sender) {
+      var newform = null;
+      this.Close();
+    };
+    this.Time20BtnClick = function (Sender) {
+      var newform1 = null;
+      var newform2 = null;
+      var newform3 = null;
+      var $tmp = pas.HomePage_U.FrmHome.ExerciseChoice;
+      if ($tmp === 1) {
+        newform1 = pas.WeightLoss20Page_U.TFrmWeightLoss20.$create("CreateNew$2")}
+       else if ($tmp === 2) {
+        newform2 = pas.Strength20Page_U.TFrmStrength20.$create("CreateNew$2")}
+       else if ($tmp === 3) newform3 = pas.Relaxation20Page_U.TFrmRelaxation20.$create("CreateNew$2");
+    };
+    this.LoadDFMValues = function () {
+      pas["WEBLib.Forms"].TCustomForm.LoadDFMValues.call(this);
+      this.WebLabel1 = pas["WEBLib.StdCtrls"].TLabel.$create("Create$1",[this]);
+      this.HomePage = pas["WEBLib.StdCtrls"].TButton.$create("Create$1",[this]);
+      this.Time10Btn = pas["WEBLib.StdCtrls"].TButton.$create("Create$1",[this]);
+      this.Time15Btn = pas["WEBLib.StdCtrls"].TButton.$create("Create$1",[this]);
+      this.Time20Btn = pas["WEBLib.StdCtrls"].TButton.$create("Create$1",[this]);
+      this.WebLabel1.BeforeLoadDFMValues();
+      this.HomePage.BeforeLoadDFMValues();
+      this.Time10Btn.BeforeLoadDFMValues();
+      this.Time15Btn.BeforeLoadDFMValues();
+      this.Time20Btn.BeforeLoadDFMValues();
+      try {
+        this.SetName("FrmTimer");
+        this.SetWidth(640);
+        this.SetHeight(480);
+        this.WebLabel1.SetParentComponent(this);
+        this.WebLabel1.SetName("WebLabel1");
+        this.WebLabel1.SetLeft(216);
+        this.WebLabel1.SetTop(80);
+        this.WebLabel1.SetWidth(222);
+        this.WebLabel1.SetHeight(13);
+        this.WebLabel1.SetCaption("Select how long you would like to exercise for:");
+        this.WebLabel1.SetHeightPercent(100.000000000000000000);
+        this.WebLabel1.SetWidthPercent(100.000000000000000000);
+        this.HomePage.SetParentComponent(this);
+        this.HomePage.SetName("HomePage");
+        this.HomePage.SetLeft(8);
+        this.HomePage.SetTop(8);
+        this.HomePage.SetWidth(65);
+        this.HomePage.SetHeight(25);
+        this.HomePage.SetCaption("< Home");
+        this.HomePage.SetHeightPercent(100.000000000000000000);
+        this.HomePage.SetWidthPercent(100.000000000000000000);
+        this.SetEvent$1(this.HomePage,this,"OnClick","HomePageClick");
+        this.Time10Btn.SetParentComponent(this);
+        this.Time10Btn.SetName("Time10Btn");
+        this.Time10Btn.SetLeft(280);
+        this.Time10Btn.SetTop(128);
+        this.Time10Btn.SetWidth(96);
+        this.Time10Btn.SetHeight(25);
+        this.Time10Btn.SetCaption("10 minutes");
+        this.Time10Btn.SetChildOrderEx(2);
+        this.Time10Btn.SetHeightPercent(100.000000000000000000);
+        this.Time10Btn.SetWidthPercent(100.000000000000000000);
+        this.SetEvent$1(this.Time10Btn,this,"OnClick","Time10BtnClick");
+        this.Time15Btn.SetParentComponent(this);
+        this.Time15Btn.SetName("Time15Btn");
+        this.Time15Btn.SetLeft(280);
+        this.Time15Btn.SetTop(184);
+        this.Time15Btn.SetWidth(96);
+        this.Time15Btn.SetHeight(25);
+        this.Time15Btn.SetCaption("15 minutes");
+        this.Time15Btn.SetChildOrderEx(3);
+        this.Time15Btn.SetHeightPercent(100.000000000000000000);
+        this.Time15Btn.SetWidthPercent(100.000000000000000000);
+        this.SetEvent$1(this.Time15Btn,this,"OnClick","Time15BtnClick");
+        this.Time20Btn.SetParentComponent(this);
+        this.Time20Btn.SetName("Time20Btn");
+        this.Time20Btn.SetLeft(280);
+        this.Time20Btn.SetTop(240);
+        this.Time20Btn.SetWidth(96);
+        this.Time20Btn.SetHeight(25);
+        this.Time20Btn.SetCaption("20 minutes");
+        this.Time20Btn.SetChildOrderEx(4);
+        this.Time20Btn.SetHeightPercent(100.000000000000000000);
+        this.Time20Btn.SetWidthPercent(100.000000000000000000);
+        this.SetEvent$1(this.Time20Btn,this,"OnClick","Time20BtnClick");
+      } finally {
+        this.WebLabel1.AfterLoadDFMValues();
+        this.HomePage.AfterLoadDFMValues();
+        this.Time10Btn.AfterLoadDFMValues();
+        this.Time15Btn.AfterLoadDFMValues();
+        this.Time20Btn.AfterLoadDFMValues();
+      };
+    };
+    rtl.addIntf(this,pas.System.IUnknown);
+    var $r = this.$rtti;
+    $r.addField("HomePage",pas["WEBLib.StdCtrls"].$rtti["TButton"]);
+    $r.addField("Time10Btn",pas["WEBLib.StdCtrls"].$rtti["TButton"]);
+    $r.addField("Time15Btn",pas["WEBLib.StdCtrls"].$rtti["TButton"]);
+    $r.addField("Time20Btn",pas["WEBLib.StdCtrls"].$rtti["TButton"]);
+    $r.addField("WebLabel1",pas["WEBLib.StdCtrls"].$rtti["TLabel"]);
+    $r.addMethod("Time10BtnClick",0,[["Sender",pas.System.$rtti["TObject"]]]);
+    $r.addMethod("Time15BtnClick",0,[["Sender",pas.System.$rtti["TObject"]]]);
+    $r.addMethod("HomePageClick",0,[["Sender",pas.System.$rtti["TObject"]]]);
+    $r.addMethod("Time20BtnClick",0,[["Sender",pas.System.$rtti["TObject"]]]);
+  });
+  this.FrmTimer = null;
+},["HomePage_U"]);
 rtl.module("libjquery",["System","JS","Web"],function () {
   "use strict";
   var $mod = this;
@@ -54015,18 +54825,22 @@ rtl.module("TrackingPage_U",["System","SysUtils","Classes","JS","Web","WEBLib.Gr
       pas["WEBLib.Forms"].TForm.$init.call(this);
       this.WebResponsiveGridPanel1 = null;
       this.WebLabel1 = null;
+      this.WebDateTimePicker2 = null;
     };
     this.$final = function () {
       this.WebResponsiveGridPanel1 = undefined;
       this.WebLabel1 = undefined;
+      this.WebDateTimePicker2 = undefined;
       pas["WEBLib.Forms"].TForm.$final.call(this);
     };
     this.LoadDFMValues = function () {
       pas["WEBLib.Forms"].TCustomForm.LoadDFMValues.call(this);
       this.WebResponsiveGridPanel1 = pas["WEBLib.ExtCtrls"].TResponsiveGridPanel.$create("Create$1",[this]);
       this.WebLabel1 = pas["WEBLib.StdCtrls"].TLabel.$create("Create$1",[this]);
+      this.WebDateTimePicker2 = pas["WEBLib.StdCtrls"].TDateTimePicker.$create("Create$1",[this]);
       this.WebResponsiveGridPanel1.BeforeLoadDFMValues();
       this.WebLabel1.BeforeLoadDFMValues();
+      this.WebDateTimePicker2.BeforeLoadDFMValues();
       try {
         this.SetName("FrmTracking");
         this.SetWidth(640);
@@ -54045,20 +54859,24 @@ rtl.module("TrackingPage_U",["System","SysUtils","Classes","JS","Web","WEBLib.Gr
         $with.FColumn = 0;
         $with.FRow = 0;
         $with.FControl = this.WebLabel1;
+        var $with1 = this.WebResponsiveGridPanel1.FControlCollection.Add$1();
+        $with1.FColumn = 0;
+        $with1.FRow = 0;
+        $with1.FControl = this.WebDateTimePicker2;
         this.WebResponsiveGridPanel1.SetColor(16777215);
         this.WebResponsiveGridPanel1.FLayout.Clear();
-        var $with1 = this.WebResponsiveGridPanel1.FLayout.Add$2();
-        $with1.FDescription = "Smartphone";
-        $with1.SetStyle("1fr");
-        $with1.SetWidth(575);
         var $with2 = this.WebResponsiveGridPanel1.FLayout.Add$2();
-        $with2.FDescription = "Tablet";
-        $with2.SetStyle("1fr 1fr");
-        $with2.SetWidth(768);
+        $with2.FDescription = "Smartphone";
+        $with2.SetStyle("1fr");
+        $with2.SetWidth(575);
         var $with3 = this.WebResponsiveGridPanel1.FLayout.Add$2();
-        $with3.FDescription = "Desktop";
-        $with3.SetStyle("1fr 1fr 1fr");
-        $with3.SetWidth(991);
+        $with3.FDescription = "Tablet";
+        $with3.SetStyle("1fr 1fr");
+        $with3.SetWidth(768);
+        var $with4 = this.WebResponsiveGridPanel1.FLayout.Add$2();
+        $with4.FDescription = "Desktop";
+        $with4.SetStyle("1fr 1fr 1fr");
+        $with4.SetWidth(991);
         this.WebLabel1.SetParentComponent(this.WebResponsiveGridPanel1);
         this.WebLabel1.SetName("WebLabel1");
         this.WebLabel1.SetLeft(0);
@@ -54069,19 +54887,36 @@ rtl.module("TrackingPage_U",["System","SysUtils","Classes","JS","Web","WEBLib.Gr
         this.WebLabel1.SetCaption("Daily reminder time:");
         this.WebLabel1.SetHeightPercent(100.000000000000000000);
         this.WebLabel1.SetWidthPercent(100.000000000000000000);
+        this.WebDateTimePicker2.SetParentComponent(this.WebResponsiveGridPanel1);
+        this.WebDateTimePicker2.SetName("WebDateTimePicker2");
+        this.WebDateTimePicker2.SetLeft(300);
+        this.WebDateTimePicker2.SetTop(0);
+        this.WebDateTimePicker2.SetWidth(170);
+        this.WebDateTimePicker2.SetHeight(22);
+        this.WebDateTimePicker2.SetHeightPercent(100.000000000000000000);
+        this.WebDateTimePicker2.SetWidthPercent(100.000000000000000000);
+        this.WebDateTimePicker2.SetAnchors({});
+        this.WebDateTimePicker2.SetBorderStyle(pas["WEBLib.Controls"].TBorderStyle.bsSingle);
+        this.WebDateTimePicker2.SetChildOrderEx(2);
+        this.WebDateTimePicker2.SetColor(16777215);
+        this.WebDateTimePicker2.SetDate(44604.702721099540000000);
+        this.WebDateTimePicker2.SetRole("");
+        this.WebDateTimePicker2.SetText("");
       } finally {
         this.WebResponsiveGridPanel1.AfterLoadDFMValues();
         this.WebLabel1.AfterLoadDFMValues();
+        this.WebDateTimePicker2.AfterLoadDFMValues();
       };
     };
     rtl.addIntf(this,pas.System.IUnknown);
     var $r = this.$rtti;
     $r.addField("WebResponsiveGridPanel1",pas["WEBLib.ExtCtrls"].$rtti["TResponsiveGridPanel"]);
     $r.addField("WebLabel1",pas["WEBLib.StdCtrls"].$rtti["TLabel"]);
+    $r.addField("WebDateTimePicker2",pas["WEBLib.StdCtrls"].$rtti["TDateTimePicker"]);
   });
   this.FrmTracking = null;
 });
-rtl.module("HomePage_U",["System","SysUtils","Classes","JS","Web","WEBLib.Graphics","WEBLib.Controls","WEBLib.Forms","WEBLib.Dialogs","WEBLib.StdCtrls","WEBLib.StdCtrls","WEBLib.Controls","WEBLib.WebCtrls","WEBLib.ExtCtrls","PointsPage_U","WeightLoss10Page_U","StrengthPage_U","RelaxationPage_U","TimePage_U","TrackingPage_U"],function () {
+rtl.module("HomePage_U",["System","SysUtils","Classes","JS","Web","WEBLib.Graphics","WEBLib.Controls","WEBLib.Forms","WEBLib.Dialogs","WEBLib.StdCtrls","WEBLib.StdCtrls","WEBLib.Controls","WEBLib.WebCtrls","WEBLib.ExtCtrls","PointsPage_U","WeightLoss10Page_U","Strength10Page_U","Relaxation10Page_U","WeightLossTimePage_U","StrengthTimePage_U","RelaxationTimePage_U","TimePage_U","TrackingPage_U"],function () {
   "use strict";
   var $mod = this;
   rtl.createClass(this,"TFrmHome",pas["WEBLib.Forms"].TForm,function () {
@@ -54092,13 +54927,13 @@ rtl.module("HomePage_U",["System","SysUtils","Classes","JS","Web","WEBLib.Graphi
       this.WeightLossBtn = null;
       this.WeightLossImg = null;
       this.StrengthImg = null;
-      this.StrengthBtn = null;
       this.RelaxationImg = null;
-      this.RelaxationBtn = null;
       this.WeightLossLbl = null;
       this.StrengthLbl = null;
       this.RelaxationLbl = null;
       this.TrackingBtn = null;
+      this.StrengthBtn = null;
+      this.RelaxationBtn = null;
       this.ExerciseChoice = 0;
     };
     this.$final = function () {
@@ -54107,19 +54942,19 @@ rtl.module("HomePage_U",["System","SysUtils","Classes","JS","Web","WEBLib.Graphi
       this.WeightLossBtn = undefined;
       this.WeightLossImg = undefined;
       this.StrengthImg = undefined;
-      this.StrengthBtn = undefined;
       this.RelaxationImg = undefined;
-      this.RelaxationBtn = undefined;
       this.WeightLossLbl = undefined;
       this.StrengthLbl = undefined;
       this.RelaxationLbl = undefined;
       this.TrackingBtn = undefined;
+      this.StrengthBtn = undefined;
+      this.RelaxationBtn = undefined;
       pas["WEBLib.Forms"].TForm.$final.call(this);
     };
     this.WebFormCreate = function (Sender) {
       this.WeightLossImg.SetURL("https:\/\/us.123rf.com\/450wm\/goodstocker\/goodstocker1810\/goodstocker181000031\/110034799-feet-on-weighing-scales-cartoon-design-icon-colorful-flat-vector-illustration-isolated-on-white-back.jpg?ver=6");
-      this.StrengthImg.SetURL("");
-      this.RelaxationImg.SetURL("");
+      this.StrengthImg.SetURL("https:\/\/media.istockphoto.com\/vectors\/cute-funny-heart-organ-jogging-run-vector-flat-line-cartoon-kawaii-vector-id1336073540");
+      this.RelaxationImg.SetURL("https:\/\/vegan.org\/wp-content\/uploads\/2019\/10\/Meditation-Stock.jpg");
     };
     this.WeightLossBtnClick = function (Sender) {
       var newform = null;
@@ -54155,9 +54990,9 @@ rtl.module("HomePage_U",["System","SysUtils","Classes","JS","Web","WEBLib.Graphi
       this.RelaxationLbl = pas["WEBLib.StdCtrls"].TLabel.$create("Create$1",[this]);
       this.PointsBtn = pas["WEBLib.StdCtrls"].TButton.$create("Create$1",[this]);
       this.WeightLossBtn = pas["WEBLib.StdCtrls"].TButton.$create("Create$1",[this]);
+      this.TrackingBtn = pas["WEBLib.StdCtrls"].TButton.$create("Create$1",[this]);
       this.StrengthBtn = pas["WEBLib.StdCtrls"].TButton.$create("Create$1",[this]);
       this.RelaxationBtn = pas["WEBLib.StdCtrls"].TButton.$create("Create$1",[this]);
-      this.TrackingBtn = pas["WEBLib.StdCtrls"].TButton.$create("Create$1",[this]);
       this.WebLabel1.BeforeLoadDFMValues();
       this.WeightLossImg.BeforeLoadDFMValues();
       this.StrengthImg.BeforeLoadDFMValues();
@@ -54167,14 +55002,13 @@ rtl.module("HomePage_U",["System","SysUtils","Classes","JS","Web","WEBLib.Graphi
       this.RelaxationLbl.BeforeLoadDFMValues();
       this.PointsBtn.BeforeLoadDFMValues();
       this.WeightLossBtn.BeforeLoadDFMValues();
+      this.TrackingBtn.BeforeLoadDFMValues();
       this.StrengthBtn.BeforeLoadDFMValues();
       this.RelaxationBtn.BeforeLoadDFMValues();
-      this.TrackingBtn.BeforeLoadDFMValues();
       try {
         this.SetName("FrmHome");
         this.SetWidth(551);
         this.SetHeight(548);
-        this.SetElementClassName("transparent");
         this.SetEvent(this,"OnCreate","WebFormCreate");
         this.WebLabel1.SetParentComponent(this);
         this.WebLabel1.SetName("WebLabel1");
@@ -54237,7 +55071,6 @@ rtl.module("HomePage_U",["System","SysUtils","Classes","JS","Web","WEBLib.Graphi
         this.RelaxationLbl.SetWidth(51);
         this.RelaxationLbl.SetHeight(13);
         this.RelaxationLbl.SetCaption("Relaxation");
-        this.RelaxationLbl.SetElementClassName("h3");
         this.RelaxationLbl.SetHeightPercent(100.000000000000000000);
         this.RelaxationLbl.SetWidthPercent(100.000000000000000000);
         this.PointsBtn.SetParentComponent(this);
@@ -54265,30 +55098,6 @@ rtl.module("HomePage_U",["System","SysUtils","Classes","JS","Web","WEBLib.Graphi
         this.WeightLossBtn.SetHeightPercent(100.000000000000000000);
         this.WeightLossBtn.SetWidthPercent(100.000000000000000000);
         this.SetEvent$1(this.WeightLossBtn,this,"OnClick","WeightLossBtnClick");
-        this.StrengthBtn.SetParentComponent(this);
-        this.StrengthBtn.SetName("StrengthBtn");
-        this.StrengthBtn.SetLeft(283);
-        this.StrengthBtn.SetTop(70);
-        this.StrengthBtn.SetWidth(150);
-        this.StrengthBtn.SetHeight(150);
-        this.StrengthBtn.SetCaption("Strength and Endruance");
-        this.StrengthBtn.SetChildOrderEx(2);
-        this.StrengthBtn.SetElementClassName("transparent");
-        this.StrengthBtn.SetHeightPercent(100.000000000000000000);
-        this.StrengthBtn.SetWidthPercent(100.000000000000000000);
-        this.SetEvent$1(this.StrengthBtn,this,"OnClick","WeightLossBtnClick");
-        this.RelaxationBtn.SetParentComponent(this);
-        this.RelaxationBtn.SetName("RelaxationBtn");
-        this.RelaxationBtn.SetLeft(176);
-        this.RelaxationBtn.SetTop(298);
-        this.RelaxationBtn.SetWidth(150);
-        this.RelaxationBtn.SetHeight(150);
-        this.RelaxationBtn.SetCaption("Relaxation");
-        this.RelaxationBtn.SetChildOrderEx(2);
-        this.RelaxationBtn.SetElementClassName("transparent");
-        this.RelaxationBtn.SetHeightPercent(100.000000000000000000);
-        this.RelaxationBtn.SetWidthPercent(100.000000000000000000);
-        this.SetEvent$1(this.RelaxationBtn,this,"OnClick","WeightLossBtnClick");
         this.TrackingBtn.SetParentComponent(this);
         this.TrackingBtn.SetName("TrackingBtn");
         this.TrackingBtn.SetLeft(176);
@@ -54300,6 +55109,30 @@ rtl.module("HomePage_U",["System","SysUtils","Classes","JS","Web","WEBLib.Graphi
         this.TrackingBtn.SetHeightPercent(100.000000000000000000);
         this.TrackingBtn.SetWidthPercent(100.000000000000000000);
         this.SetEvent$1(this.TrackingBtn,this,"OnClick","TrackingBtnClick");
+        this.StrengthBtn.SetParentComponent(this);
+        this.StrengthBtn.SetName("StrengthBtn");
+        this.StrengthBtn.SetLeft(283);
+        this.StrengthBtn.SetTop(70);
+        this.StrengthBtn.SetWidth(150);
+        this.StrengthBtn.SetHeight(150);
+        this.StrengthBtn.SetCaption("Strength and Endurance");
+        this.StrengthBtn.SetChildOrderEx(15);
+        this.StrengthBtn.SetElementClassName("transparent");
+        this.StrengthBtn.SetHeightPercent(100.000000000000000000);
+        this.StrengthBtn.SetWidthPercent(100.000000000000000000);
+        this.SetEvent$1(this.StrengthBtn,this,"OnClick","StrengthBtnClick");
+        this.RelaxationBtn.SetParentComponent(this);
+        this.RelaxationBtn.SetName("RelaxationBtn");
+        this.RelaxationBtn.SetLeft(176);
+        this.RelaxationBtn.SetTop(298);
+        this.RelaxationBtn.SetWidth(150);
+        this.RelaxationBtn.SetHeight(150);
+        this.RelaxationBtn.SetCaption("Relaxation");
+        this.RelaxationBtn.SetChildOrderEx(15);
+        this.RelaxationBtn.SetElementClassName("transparent");
+        this.RelaxationBtn.SetHeightPercent(100.000000000000000000);
+        this.RelaxationBtn.SetWidthPercent(100.000000000000000000);
+        this.SetEvent$1(this.RelaxationBtn,this,"OnClick","RelaxationBtnClick");
       } finally {
         this.WebLabel1.AfterLoadDFMValues();
         this.WeightLossImg.AfterLoadDFMValues();
@@ -54310,9 +55143,9 @@ rtl.module("HomePage_U",["System","SysUtils","Classes","JS","Web","WEBLib.Graphi
         this.RelaxationLbl.AfterLoadDFMValues();
         this.PointsBtn.AfterLoadDFMValues();
         this.WeightLossBtn.AfterLoadDFMValues();
+        this.TrackingBtn.AfterLoadDFMValues();
         this.StrengthBtn.AfterLoadDFMValues();
         this.RelaxationBtn.AfterLoadDFMValues();
-        this.TrackingBtn.AfterLoadDFMValues();
       };
     };
     rtl.addIntf(this,pas.System.IUnknown);
@@ -54322,13 +55155,13 @@ rtl.module("HomePage_U",["System","SysUtils","Classes","JS","Web","WEBLib.Graphi
     $r.addField("WeightLossBtn",pas["WEBLib.StdCtrls"].$rtti["TButton"]);
     $r.addField("WeightLossImg",pas["WEBLib.ExtCtrls"].$rtti["TImageControl"]);
     $r.addField("StrengthImg",pas["WEBLib.ExtCtrls"].$rtti["TImageControl"]);
-    $r.addField("StrengthBtn",pas["WEBLib.StdCtrls"].$rtti["TButton"]);
     $r.addField("RelaxationImg",pas["WEBLib.ExtCtrls"].$rtti["TImageControl"]);
-    $r.addField("RelaxationBtn",pas["WEBLib.StdCtrls"].$rtti["TButton"]);
     $r.addField("WeightLossLbl",pas["WEBLib.StdCtrls"].$rtti["TLabel"]);
     $r.addField("StrengthLbl",pas["WEBLib.StdCtrls"].$rtti["TLabel"]);
     $r.addField("RelaxationLbl",pas["WEBLib.StdCtrls"].$rtti["TLabel"]);
     $r.addField("TrackingBtn",pas["WEBLib.StdCtrls"].$rtti["TButton"]);
+    $r.addField("StrengthBtn",pas["WEBLib.StdCtrls"].$rtti["TButton"]);
+    $r.addField("RelaxationBtn",pas["WEBLib.StdCtrls"].$rtti["TButton"]);
     $r.addMethod("WebFormCreate",0,[["Sender",pas.System.$rtti["TObject"]]]);
     $r.addMethod("WeightLossBtnClick",0,[["Sender",pas.System.$rtti["TObject"]]]);
     $r.addMethod("PointsBtnClick",0,[["Sender",pas.System.$rtti["TObject"]]]);
@@ -54338,7 +55171,7 @@ rtl.module("HomePage_U",["System","SysUtils","Classes","JS","Web","WEBLib.Graphi
   });
   this.FrmHome = null;
 });
-rtl.module("program",["System","WEBLib.Forms","WEBLib.Forms","HomePage_U","PointsPage_U","WeightLoss10Page_U","StrengthPage_U","RelaxationPage_U","TimePage_U","TrackingPage_U"],function () {
+rtl.module("program",["System","WEBLib.Forms","WEBLib.Forms","HomePage_U","PointsPage_U","WeightLoss10Page_U","Strength10Page_U","Relaxation10Page_U","TrackingPage_U","WeightLoss15Page_U","WeightLoss20Page_U","Strength15Page_U","Strength20Page_U","Relaxation20Page_U","Relaxation15Page_U","TimePage_U"],function () {
   "use strict";
   var $mod = this;
   $mod.$implcode = function () {
@@ -54357,30 +55190,60 @@ rtl.module("program",["System","WEBLib.Forms","WEBLib.Forms","HomePage_U","Point
       }, set: function (v) {
         this.p.FrmPoints = v;
       }});
-    pas["WEBLib.Forms"].Application.CreateForm(pas.WeightLoss10Page_U.TFrmWeightLoss,{p: pas.WeightLoss10Page_U, get: function () {
-        return this.p.FrmWeightLoss;
+    pas["WEBLib.Forms"].Application.CreateForm(pas.WeightLoss10Page_U.TFrmWeightLoss10,{p: pas.WeightLoss10Page_U, get: function () {
+        return this.p.FrmWeightLoss10;
       }, set: function (v) {
-        this.p.FrmWeightLoss = v;
+        this.p.FrmWeightLoss10 = v;
       }});
-    pas["WEBLib.Forms"].Application.CreateForm(pas.StrengthPage_U.TFrmStrength,{p: pas.StrengthPage_U, get: function () {
-        return this.p.FrmStrength;
+    pas["WEBLib.Forms"].Application.CreateForm(pas.Strength10Page_U.TFrmStrength10,{p: pas.Strength10Page_U, get: function () {
+        return this.p.FrmStrength10;
       }, set: function (v) {
-        this.p.FrmStrength = v;
+        this.p.FrmStrength10 = v;
       }});
-    pas["WEBLib.Forms"].Application.CreateForm(pas.RelaxationPage_U.TFrmRelaxation,{p: pas.RelaxationPage_U, get: function () {
-        return this.p.FrmRelaxation;
+    pas["WEBLib.Forms"].Application.CreateForm(pas.Relaxation10Page_U.TFrmRelaxation10,{p: pas.Relaxation10Page_U, get: function () {
+        return this.p.FrmRelaxation10;
       }, set: function (v) {
-        this.p.FrmRelaxation = v;
-      }});
-    pas["WEBLib.Forms"].Application.CreateForm(pas.TimePage_U.TFrmTimer,{p: pas.TimePage_U, get: function () {
-        return this.p.FrmTimer;
-      }, set: function (v) {
-        this.p.FrmTimer = v;
+        this.p.FrmRelaxation10 = v;
       }});
     pas["WEBLib.Forms"].Application.CreateForm(pas.TrackingPage_U.TFrmTracking,{p: pas.TrackingPage_U, get: function () {
         return this.p.FrmTracking;
       }, set: function (v) {
         this.p.FrmTracking = v;
+      }});
+    pas["WEBLib.Forms"].Application.CreateForm(pas.WeightLoss15Page_U.TFrmWeightLoss15,{p: pas.WeightLoss15Page_U, get: function () {
+        return this.p.FrmWeightLoss15;
+      }, set: function (v) {
+        this.p.FrmWeightLoss15 = v;
+      }});
+    pas["WEBLib.Forms"].Application.CreateForm(pas.WeightLoss20Page_U.TFrmWeightLoss20,{p: pas.WeightLoss20Page_U, get: function () {
+        return this.p.FrmWeightLoss20;
+      }, set: function (v) {
+        this.p.FrmWeightLoss20 = v;
+      }});
+    pas["WEBLib.Forms"].Application.CreateForm(pas.Strength15Page_U.TFrmStrength15,{p: pas.Strength15Page_U, get: function () {
+        return this.p.FrmStrength15;
+      }, set: function (v) {
+        this.p.FrmStrength15 = v;
+      }});
+    pas["WEBLib.Forms"].Application.CreateForm(pas.Strength20Page_U.TFrmStrength20,{p: pas.Strength20Page_U, get: function () {
+        return this.p.FrmStrength20;
+      }, set: function (v) {
+        this.p.FrmStrength20 = v;
+      }});
+    pas["WEBLib.Forms"].Application.CreateForm(pas.Relaxation20Page_U.TFrmRelaxation20,{p: pas.Relaxation20Page_U, get: function () {
+        return this.p.FrmRelaxation20;
+      }, set: function (v) {
+        this.p.FrmRelaxation20 = v;
+      }});
+    pas["WEBLib.Forms"].Application.CreateForm(pas.Relaxation15Page_U.TFrmRelaxation15,{p: pas.Relaxation15Page_U, get: function () {
+        return this.p.FrmRelaxation15;
+      }, set: function (v) {
+        this.p.FrmRelaxation15 = v;
+      }});
+    pas["WEBLib.Forms"].Application.CreateForm(pas.TimePage_U.TFrmTimer,{p: pas.TimePage_U, get: function () {
+        return this.p.FrmTimer;
+      }, set: function (v) {
+        this.p.FrmTimer = v;
       }});
     pas["WEBLib.Forms"].Application.Run();
   };
