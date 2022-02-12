@@ -1,0 +1,14 @@
+object FrmWeightLoss: TFrmWeightLoss
+  Width = 640
+  Height = 480
+  OnCreate = WebFormCreate
+  object TextBox: TWebEdit
+    Left = 264
+    Top = 232
+    Width = 121
+    Height = 22
+    HeightPercent = 100.000000000000000000
+    Text = 'TextBox'
+    WidthPercent = 100.000000000000000000
+  end
+end

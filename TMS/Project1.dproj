@@ -57,8 +57,8 @@
         <TMSWebProject>2</TMSWebProject>
         <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
         <Icns_MainIcns>$(BDS)\bin\delphi_PROJECTICNS.icns</Icns_MainIcns>
-        <TMSWebHTMLFile>Project1.html</TMSWebHTMLFile>
         <SanitizedProjectName>Project1</SanitizedProjectName>
+        <TMSWebHTMLFile>Project1.html</TMSWebHTMLFile>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <DCC_UsePackage>DBXSqliteDriver;RESTComponents;fmxase;DBXDb2Driver;DBXInterBaseDriver;vclactnband;vclFireDAC;bindcompvclsmp;emsclientfiredac;tethering;svnui;DataSnapFireDAC;FireDACADSDriver;DBXMSSQLDriver;DatasnapConnectorsFreePascal;FireDACMSSQLDriver;vcltouch;vcldb;bindcompfmx;svn;DBXOracleDriver;inetdb;emsedge;fmx;FireDACIBDriver;fmxdae;vcledge;FireDACDBXDriver;dbexpress;IndyCore;vclx;dsnap;emsclient;DataSnapCommon;FireDACCommon;RESTBackendComponents;DataSnapConnectors;VCLRESTComponents;soapserver;vclie;bindengine;DBXMySQLDriver;CloudService;FireDACOracleDriver;FireDACMySQLDriver;DBXFirebirdDriver;FireDACCommonODBC;FireDACCommonDriver;TMSWEBCorePkgLibDXE13;DataSnapClient;inet;IndyIPCommon;bindcompdbx;vcl;IndyIPServer;DBXSybaseASEDriver;IndySystem;FireDACDb2Driver;dsnapcon;FireDACMSAccDriver;fmxFireDAC;FireDACInfxDriver;vclimg;FireDAC;emshosting;FireDACSqliteDriver;FireDACPgDriver;FireDACASADriver;TMSWEBCorePkgDXE13;DBXOdbcDriver;FireDACTDataDriver;soaprtl;DbxCommonDriver;DataSnapServer;xmlrtl;soapmidas;DataSnapNativeClient;fmxobj;vclwinx;FireDACDSDriver;rtl;emsserverresource;DbxClientDriver;DBXSybaseASADriver;CustomIPTransport;vcldsnap;bindcomp;appanalytics;DBXInformixDriver;IndyIPClient;bindcompvcl;dbxcds;VclSmp;adortl;FireDACODBCDriver;DataSnapIndy10ServerTransport;dsnapxml;DataSnapProviderClient;dbrtl;IndyProtocols;inetdbxpress;FireDACMongoDBDriver;DataSnapServerMidas;$(DCC_UsePackage)</DCC_UsePackage>
@@ -104,13 +104,38 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="Unit1.pas">
-            <Form>Form1</Form>
+        <DCCReference Include="HomePage_U.pas">
+            <Form>FrmHome</Form>
             <FormType>dfm</FormType>
             <DesignClass>TWebForm</DesignClass>
         </DCCReference>
-        <DCCReference Include="Unit2.pas">
-            <Form>Form2</Form>
+        <DCCReference Include="PointsPage_U.pas">
+            <Form>FrmPoints</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TWebForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="WeightLoss10Page_U.pas">
+            <Form>FrmWeightLoss</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TWebForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="StrengthPage_U.pas">
+            <Form>FrmStrength</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TWebForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="RelaxationPage_U.pas">
+            <Form>FrmRelaxation</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TWebForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="TimePage_U.pas">
+            <Form>FrmTimer</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TWebForm</DesignClass>
+        </DCCReference>
+        <DCCReference Include="TrackingPage_U.pas">
+            <Form>FrmTracking</Form>
             <FormType>dfm</FormType>
             <DesignClass>TWebForm</DesignClass>
         </DCCReference>
