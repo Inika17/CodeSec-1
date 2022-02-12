@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2022/02/12 11:04:36.225,=C:\Users\Inika\Documents\Embarcadero\Studio\Projects\Project1.html</Transaction>
+    <Transaction>2022/02/12 11:04:36.286,=C:\Users\Inika\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/02/12 11:04:47.680,C:\Users\Inika\Documents\Delphi\TMS\Unit1.dfm=C:\Users\Inika\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2022/02/12 11:04:47.680,C:\Users\Inika\Documents\Delphi\TMS\Unit1.pas=C:\Users\Inika\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/02/12 11:04:47.680,C:\Users\Inika\Documents\Delphi\TMS\Unit1.html=C:\Users\Inika\Documents\Embarcadero\Studio\Projects\Unit1.html</Transaction>
+    <Transaction>2022/02/12 11:04:49.706,C:\Users\Inika\Documents\Delphi\TMS\Project1.html=C:\Users\Inika\Documents\Embarcadero\Studio\Projects\Project1.html</Transaction>
+    <Transaction>2022/02/12 11:04:50.771,C:\Users\Inika\Documents\Delphi\TMS\Project1.dproj=C:\Users\Inika\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2022/02/12 12:20:27.387,=C:\Users\Inika\Documents\Delphi\TMS\Unit2.pas</Transaction>
+  </Transactions>
+</BorlandProject>
