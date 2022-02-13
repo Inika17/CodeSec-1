@@ -59472,9 +59472,9 @@ rtl.module("HomePage_U",["System","SysUtils","Classes","JS","Web","WEBLib.Graphi
         this.WebLabel1.SetName("WebLabel1");
         this.WebLabel1.SetLeft(32);
         this.WebLabel1.SetTop(28);
-        this.WebLabel1.SetWidth(121);
+        this.WebLabel1.SetWidth(124);
         this.WebLabel1.SetHeight(13);
-        this.WebLabel1.SetCaption("CodeSec PROJECT NAME");
+        this.WebLabel1.SetCaption("Beep Boop Fitness Centre");
         this.WebLabel1.SetHeightPercent(100.000000000000000000);
         this.WebLabel1.SetWidthPercent(100.000000000000000000);
         this.WeightLossImg.SetParentComponent(this);

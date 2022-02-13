@@ -86,6 +86,7 @@
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+        <TMSWebBrowser>4</TMSWebBrowser>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
@@ -854,10 +855,6 @@
                 </DeployClass>
                 <DeployClass Name="ProjectiOSLaunchScreen">
                     <Platform Name="iOSDevice64">
-                        <RemoteDir>..\$(PROJECTNAME).launchscreen</RemoteDir>
-                        <Operation>64</Operation>
-                    </Platform>
-                    <Platform Name="iOSSimulator">
                         <RemoteDir>..\$(PROJECTNAME).launchscreen</RemoteDir>
                         <Operation>64</Operation>
                     </Platform>

@@ -1,0 +1,46 @@
+unit TimePage_U;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, JS, Web, WEBLib.Graphics, WEBLib.Controls,
+  WEBLib.Forms, WEBLib.Dialogs, Vcl.Controls, Vcl.StdCtrls, WEBLib.StdCtrls;
+
+type
+  TFrmTimer = class(TWebForm)
+    TimeLbl: TWebLabel;
+    Time10Btn: TWebButton;
+    Time15Btn: TWebButton;
+    Time20Btn: TWebButton;
+    procedure Time10BtnClick(Sender: TObject);
+    procedure Time15BtnClick(Sender: TObject);
+    procedure Time20BtnClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    {timechosen : integer;   }
+  end;
+
+var
+  FrmTimer: TFrmTimer;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFrmTimer.Time10BtnClick(Sender: TObject);
+begin
+  timechosen := 10;
+end;
+
+procedure TFrmTimer.Time15BtnClick(Sender: TObject);
+begin
+  timechosen := 15;
+end;
+
+procedure TFrmTimer.Time20BtnClick(Sender: TObject);
+begin
+  timechosen := 20;
+end;
+
+end.

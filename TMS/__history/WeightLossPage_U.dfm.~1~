@@ -1,0 +1,4 @@
+object FrmWeightLoss: TFrmWeightLoss
+  Width = 640
+  Height = 480
+end
